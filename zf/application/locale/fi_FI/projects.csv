@@ -1,0 +1,29 @@
+Projects_Projects;Projektit
+Projects_Nimi;Selite
+Projects_Deselect;Poista valinnat
+Projects_Deselect_Tooltip;Poista valinnat tästä napista
+Projects_Refresh;Lataa
+Projects_Refresh_Tooltip;Lataa tästä napista
+Projects_Add_New;Lisää projekti
+Projects_Add_New_Tooltip;Lisää projekti tästä napista
+Projects_Delete;Poista projekti
+Projects_Delete_Tooltip;Poista projekti tästä napista
+Projects_Submit;Tallenna
+Projects_Close;Sulje
+Projects_Error;Virhe
+Projects_Success;Onnistui
+Projects_Are_You_Sure_Title;Oletko varma?
+Projects_Are_You_Sure_Text;Oletko varma, että haluat poistaa valitun projektin?
+Projects_Sending;Tallentaa…
+Projects_Loading;Lataa...
+Projects_New;Lisää uusi projekti
+Projects_Project_Id;Numero
+Projects_Project_Nimi;Selite
+Projects_Export;Tuo
+Projects_Export_Tooltip;Tuo projektit xls tiedostona tästä napistä
+Projects_Import;Vie
+Projects_Import_Tooltip;Vie projektit xls tiedostona tästä napista
+Projects_Select_Xls;XLS-tiedosto
+Projects_Select_Xls_Label;XLS
+Projects_Only_Xls_Allowed;Voit valita vain XLS-tiedoston
+Projects_Browse;Selaa...

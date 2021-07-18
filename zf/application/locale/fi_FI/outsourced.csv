@@ -1,0 +1,75 @@
+Outsourced_Outsourced;Vuokratyöntekijät
+Outsourced_Startplace;Työhönottopaikka
+Outsourced_Employee;Työntekijä
+Outsourced_Address;Osoite
+Outsourced_Zip;Postinumero
+Outsourced_City;Postitoimipaikka
+Outsourced_Email;Sähköpostiosoite
+Outsourced_Phone;Puhelinnumero
+Outsourced_Taxnumber;Veronumero
+Outsourced_Sotu;Henkilötunnus
+Outsourced_No_Outsourced;Ei työn tekijöitä
+Outsourced_Page;Sivu
+Outsourced_Search;Etsi
+Outsourced_Refresh;Lataa työn tekijät uudestaan
+Outsourced_Refresh_Tooltip;Lataa työn tekijät uudestaan tästä napista
+Outsourced_Outsourced;Lisää uusi työntekijä
+Outsourced_Outsourced_Tooltip;Lisää uusi työntekijä tästä napista
+Outsourced_Close;Peruuta
+Outsourced_Submit;Talenna
+Outsourced_New_Career_Created;Uusi työntekijä luotu
+Outsourced_Select_Pdf;Valitse PDF
+Outsourced_Select_Pdf_Label;CV
+Outsourced_Only_Pdf_Allowe;Vain PDF-tiedosto käy
+Outsourced_Download;Lataa CV
+Outsourced_Download_Tooltip;Lataa CV tästä napista
+Outsourced_Firstname;Etunimi
+Outsourced_Lastname;Sukunimi
+Outsourced_Qualification_Name;Pätevyys
+Outsourced_Employee_Name;Työntekijän nimi
+Outsourced_Date_Completed;Voimassa päivämäärään asti
+Outsourced_Active;Voimassa
+Outsourced_Experience_In_Years;Kokemus vuosina
+Outsourced_No_Qualifications;Ei pätevyyksiä
+Outsourced_True;Kyllä
+Outsourced_False;Ei
+Outsourced_Year;-vuosi
+Outsourced_Years;-vuotta
+Outsourced_Refresh_Qualifications;Lalaa pätevyydet uudestaan
+Outsourced_New_Qualification;Lisää uusi pätevyys
+Outsourced_New_Qualification_Tooltip;Lisää uusi pätevyys tästä napista
+Outsourced_Select_Pdf_Label_Qualification;Pätevyys todistus
+Outsourced_Effective_Date;Voimassaolo päivämäärä
+Outsourced_Missing;Puuttuu
+Outsourced_New_Qualification_Created;Uusi pätevyys lisätty
+Outsourced_Download_Certificate;Lataa todistus
+Outsourced_Download_Certificate_Tooltip;Lataa todistus tästä napista
+Outsourced_Missing_City;Tieto puutuu lataa uudestaan
+Outsourced_Error;Virhe
+Outsourced_Move_Outsourced;Siirrä työntekijä työnhakijoihin
+Outsourced_Move_Outsourced_Tooltip;Siirrä työntekijä työnhakijoihin tästä napista
+Outsourced_Are_You_Sure_Title;Oletko varma?
+Outsourced_Are_You_Sure_Text;Oletko varma, että haluat siirää työntekijän työn hakijoihin?
+Outsourced_Are_You_Sure_Delete_Text;Oletko varma, että haluat poista pätevyyden?
+Outsourced_Delete_Qualification;Poista pätevyys
+Outsourced_Delete_Qualification_Tooltip;Poista pätevyys tästä napista
+Outsourced_Qualification_Deleted;Pätevyys poistettu
+Outsourced_Employee_Moved;Työntekijä siirretty työnhakijoihin
+Outsourced_Delete_Outsourced;Poista työntekijä
+Outsourced_Delete_Outsourced_Tooltip;Poista työntekijä tästä napista
+Outsourced_Are_You_Sure_Delete_Outsourced_Text;Oletko varma, että haluat poista työntekijän?
+Outsourced_Replace_CV;Korvaa nykyinen CV
+Outsourced_Replace_CV_Tooltip;Korvaa nykyinen CV tästä napista
+Outsourced_Replaced;Vanha CV korvattu 
+Outsourced_Bank_Account;Tilinumero
+Outsourced_Replace_Qualification;Korvaa pätevyyden vanha liite
+Outsourced_Replace_Qualification_Tooltip;Korvaa pätevyyden vanha liite tästä napista
+Outsourced_Replace_Qa;Korvaa pätevyyden vanha liite
+Outsourced_Refresh_Qualifications_Tooltip;Lalaa pätevyydet uudestaan tästä napista
+Outsourced_Outsourced_Deleted;Työntekijä poistettu
+Outsourced_Job_Title;Työtehtävä
+Outsourced_Salary;Palkka
+Outsourced_Tes;TES
+Outsourced_Start_Date;Aloituspäivämäärä
+Outsourced_New_Career_Failed;Ansioluttelon liitetiedoston siirtäminen palvelimelle onnistui
+Outsourced_New_Qualification_Failed;Pätevyyden liitetiedostojen siirtäminen palvelimelle epäonnstui

@@ -1,0 +1,96 @@
+Copyright;"Copyright &copy; 2007-2013 MML-Group, kaikki oikeudet pidetään."
+License;GNU GPL
+ApplicationName;MML-Group -ostolaskujen kierrätys ja ostoreskontra
+Modules;Modulit
+Admin;Ylläpito
+Home;Koti
+Ext_Date_Format;m/d/Y
+You_Have_A_Invoices_Subject;Sinulla on käsittelemättömiä laskuja
+You_Have_A_Invoices_Text;Sinulla on käsittelemättömiä laskuja
+You_Have_A_Invoices_Html;Sinulla on käsittelemättömiä laskuja. Kirjaudu portaaliin,
+You_Have_A_Invoices_Near_Due_Date_Subject;Sinulla on käsittelemättömiä laskuja joiden eräpäivä on kolmen päivän kuluttua tai lähempänä
+You_Have_A_Invoices_Near_Due_Date_Text;Sinulla on käsittelemättömiä laskuja joiden eräpäivä on kolmen päivän kuluttua tai lähempänä
+You_Have_A_Invoices_Near_Due_Date_Html;Sinulla on käsittelemättömiä laskuja joiden eräpäivä on kolmen päivän kuluttua tai lähempänä
+Email_Subject_Text_1;HRM-ilmoitus:
+Email_Subject_Text_2;Työsopimus päättyy!
+Email_Body_Text_1;Työntekijän
+Email_Body_Text_2;työsopimus päättyy 2 viikon päästä (
+Email_Body_Text_3;)!
+Email_Body_Text_4;Selvitä työsuhteen jatko ja laadi tarvittaessa uusi työsopimus!
+Email_Body_Text_5;Kirjaudu HRM:ään
+Email_Body_Text_6;työsopimus päättyy 1 viikon päästä (
+Email_Body_Text_7;työsopimus päättyy
+Email_Body_Text_8;päivän päästä (
+Email_Body_Text_9;tänään (
+Email_Body_Text_10;työsopimus päättyi eilen (
+Email_Subject_Text_3;Työsopimus päättyi eilen!
+ToEmailName1;Henkilöstö – MML-Group
+Qualification_Email_Subject_Text_1;HRM-ilmoitus:
+Qualification_Email_Subject_Text_2;Pätevyys vanhenee
+Qualification_Email_Body_Text_1;Työntekijän
+Qualification_Email_Body_Text_2;-pätevyys vanhenee 2 kuukauden päästä (
+Qualification_Email_Body_Text_3;).
+Qualification_Email_Body_Text_4;Selvitä uudelleenkoulutuksen tarve!
+Qualification_Email_Body_Text_5;Kirjaudu HRM:ään
+Qualification_Email_Body_Text_6;-pätevyys vanhenee tänään (
+Qualification_Email_Body_Text_7;-pätevyys vanheni eilen (
+Qualification_Email_Subject_Text_6;Pätevyys vanhenee tänään!
+Qualification_Email_Subject_Text_7;Pätevyys vanheni eilen!
+Qualification_Email_Body_Text_8;-pätevyys vanhenee 8 viikon päästä (
+Qualification_Email_Body_Text_9;-pätevyys vanhenee 7 viikon päästä (
+Qualification_Email_Body_Text_10;-pätevyys vanhenee 6 viikon päästä (
+Qualification_Email_Body_Text_11;-pätevyys vanhenee 5 viikon päästä (
+Qualification_Email_Body_Text_12;-pätevyys vanhenee 4 viikon päästä (
+Qualification_Email_Body_Text_13;-pätevyys vanhenee 3 viikon päästä (
+Qualification_Email_Body_Text_14;-pätevyys vanhenee 2 viikon päästä (
+Qualification_Email_Body_Text_15;-pätevyys vanhenee 13 päivän päästä (
+Qualification_Email_Body_Text_16;-pätevyys vanhenee 12 päivän päästä (
+Qualification_Email_Body_Text_17;-pätevyys vanhenee 11 päivän päästä (
+Qualification_Email_Body_Text_18;-pätevyys vanhenee 10 päivän päästä (
+Qualification_Email_Body_Text_19;-pätevyys vanhenee 9 päivän päästä (
+Qualification_Email_Body_Text_20;-pätevyys vanhenee 8 päivän päästä (
+Qualification_Email_Body_Text_21;-pätevyys vanhenee 7 päivän päästä (
+Qualification_Email_Body_Text_22;-pätevyys vanhenee 6 päivän päästä (
+Qualification_Email_Body_Text_23;-pätevyys vanhenee 5 päivän päästä (
+Qualification_Email_Body_Text_24;-pätevyys vanhenee 4 päivän päästä (
+Qualification_Email_Body_Text_25;-pätevyys vanhenee 3 päivän päästä (
+Qualification_Email_Body_Text_26;-pätevyys vanhenee 2 päivän päästä (
+Qualification_Email_Body_Text_27;-pätevyys vanhenee 1 päivän päästä (
+Timesheet_Email_Subject_Text_1;HRM-ilmoitus:
+Timesheet_Email_Subject_Text_2;on täyttänyt Tuntikortin
+Timesheet_Email_Body_Text_1;Hei
+Timesheet_Email_Body_Text_2;on täyttänyt Tuntikortin.
+Timesheet_Email_Subject_Text_3;Tuntikortti on palautettu virheelisenä
+Timesheet_Email_Body_Text_3;Tuntikortti on palautettu virheelisenä. Käy korjaamassa virheet.
+Timesheet_Email_Body_Text_4;Asiakas on palauttanut tuntikortin virheellisenä.
+Timesheet_Email_Subject_Text_4;Asiakas on palauttanut tuntikortin virheellisenä
+Timesheet_Email_Body_Text_5;Asiakas on hyväksynyt tuntikortin.
+Timesheet_Email_Subject_Text_5;Asiakas on hyväksynyt tuntikortin
+Email_Body_Text_11;Jos työsuhde ei jatku pyydä henkilöä palauttamaan kuittaamansa varusteet ja ilmoita työsuhteen päättymisestä talousosastolle lähettäämällä sähköpostin
+Timesheet_Email_Subject_Text_6;Sinulle on tullut tuntikortti tarkastattevaksi
+Timesheet_Email_Body_Text_6;Sinulle on tullut tuntikortti tarkastattevaksi.
+Timesheet_Email_Link_Text_1;Tuntikortteja pääset selailemaan
+Timesheet_Email_Link_Text_2;TÄSTÄ LINKISTÄ
+Trial_Email_Subject_Text_1;HRM-ilmoitus:
+Trial_Email_Subject_Text_2;Koeaika päättyy
+Trial_Email_Body_Text_1;Työntekijän
+Trial_Email_Body_Text_2;koeaika päättyy 5 päivän kuluttua
+Trial_Email_Body_Text_3;Varmistathan, että kaikki sujuu edeleen sopimuksen mukaan?
+Trial_Email_Body_Text_4;Kirjaudu HRM:ään
+Timesheet_Email_Body_Text_7;Sinulla on käsittelemättömiä tuntikortteja.
+Timesheet_Email_Body_Text_8;Kirjaudu HRM:ään
+Timesheetsarm_Cron_Approve;Tuntikortti hyväsyttiin croniajolla
+Email_Table_Header_Subject_1;Työntekijän nimi
+Email_Table_Header_Subject_2;Päättymispäivämäärä
+Email_Table_Header_Subject_3;Pätevyys
+Email_Table_Header_Subject_4;Päiviä jäljellä
+Email_Table_Header_Subject_5;Päivää sitten
+Email_Table_Main_Subject_1;Nämä työsopimukset päätyvät 30-päivän sisällä
+Email_Table_Main_Subject_9;Nämä pätevyydet erääntyvät 30-päivän sisällä
+Email_Table_Main_Subject_31;Nämä koeajat erääntyvät 30-päivän sisällä
+Email_Table_Main_Subject_32;Nämä työsopimukset päätyneet 1-7 päivän välillä
+Email_Compilation_Subject_1;Kooste työsopimusten, pätevyyksien ja koeaikojen päättymisestä
+Email_Table_Main_Text_1;Kooste työsopimusten, pätevyyksien ja koeaikojen päättymisestä.
+Email_Agreements_Call_Action;Jos työsuhde ei jatku pyydä henkilöä palauttamaan kuittaamansa varusteet ja ilmoita työsuhteen päättymisestä sähköpostilla
+Email_Qualifications_Call_Action;Selvitä työntekijöiden uudelleenkoulutustarve ja päivitä tarvittaessa pätevyys vähintään 7 päivää ennen erääntymistä.
+Email_Trial_Call_Action;Tarkasta asiakkaalta ja työntekijän työmaalla olevilta esimiehiltä ja kolleegoilta töiden sujuminen sekä anna koeaikapalaute työntekijälle.

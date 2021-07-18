@@ -1,0 +1,102 @@
+Careers_Careers;Pätevyydet
+Careers_Startplace;Työhönottopaikka
+Careers_Employee;Työntekijä
+Careers_Address;Osoite
+Careers_Zip;Postinumero
+Careers_City;Postitoimipaikka
+Careers_Email;Sähköpostiosoite
+Careers_Phone;Puhelinnumero
+Careers_Taxnumber;Veronumero
+Careers_Sotu;Henkilötunnus
+Careers_No_Careers;Ei työn tekijöitä
+Careers_Page;Sivu
+Careers_Search;Etsi
+Careers_Refresh;Lataa työn tekijät uudestaan
+Careers_Refresh_Tooltip;Lataa työn tekijät uudestaan tästä napista
+Careers_Career;Lisää uusi työntekijä
+Careers_Career_Tooltip;Lisää uusi työntekijä tästä napista
+Careers_Close;Peruuta
+Careers_Submit;Talenna
+Careers_New_Career_Created;Uusi työntekijä luotu
+Careers_Select_Pdf;Valitse PDF
+Careers_Select_Pdf_Label;CV
+Careers_Only_Pdf_Allowe;Vain PDF-tiedosto käy
+Careers_Download;Lataa CV
+Careers_Download_Tooltip;Lataa CV tästä napista
+Careers_Firstname;Etunimi
+Careers_Lastname;Sukunimi
+Careers_Qualification_Name;Pätevyys
+Careers_Employee_Name;Työntekijän nimi
+Careers_Date_Completed;Voimassa päivämäärään asti
+Careers_Active;Voimassa
+Careers_Experience_In_Years;Kokemus vuosina
+Careers_No_Qualifications;Ei pätevyyksiä
+Careers_True;Kyllä
+Careers_False;Ei
+Careers_Year;-vuosi
+Careers_Years;-vuotta
+Careers_Refresh_Qualifications;Lalaa pätevyydet uudestaan
+Careers_New_Qualification;Lisää uusi pätevyys
+Careers_New_Qualification_Tooltip;Lisää uusi pätevyys tästä napista
+Careers_Select_Pdf_Label_Qualification;Pätevyys todistus
+Careers_Effective_Date;Voimassaolo päivämäärä
+Careers_Missing;Puuttuu
+Careers_New_Qualification_Created;Uusi pätevyys lisätty
+Careers_Download_Certificate;Lataa todistus
+Careers_Download_Certificate_Tooltip;Lataa todistus tästä napista
+Careers_Missing_City;Tieto puutuu lataa uudestaan
+Careers_Error;Virhe
+Careers_Move_Career;Siirrä työntekijä työnhakijoihin
+Careers_Move_Career_Tooltip;Siirrä työntekijä työnhakijoihin tästä napista
+Careers_Are_You_Sure_Title;Oletko varma?
+Careers_Are_You_Sure_Text;Oletko varma, että haluat siirää työntekijän työn hakijoihin?
+Careers_Are_You_Sure_Delete_Text;Oletko varma, että haluat poista pätevyyden?
+Careers_Delete_Qualification;Poista pätevyys
+Careers_Delete_Qualification_Tooltip;Poista pätevyys tästä napista
+Careers_Qualification_Deleted;Pätevyys poistettu
+Careers_Employee_Moved;Työntekijä siirretty työnhakijoihin
+Careers_Delete_Career;Poista työntekijä
+Careers_Delete_Career_Tooltip;Poista työntekijä tästä napista
+Careers_Are_You_Sure_Delete_Career_Text;Oletko varma, että haluat poista työntekijän?
+Careers_Replace_CV;Korvaa nykyinen CV
+Careers_Replace_CV_Tooltip;Korvaa nykyinen CV tästä napista
+Careers_Replaced;Vanha CV korvattu 
+Careers_Bank_Account;IBAN
+Careers_Replace_Qualification;Korvaa pätevyyden vanha liite
+Careers_Replace_Qualification_Tooltip;Korvaa pätevyyden vanha liite tästä napista
+Careers_Replace_Qa;Korvaa pätevyyden vanha liite
+Careers_Refresh_Qualifications_Tooltip;Lalaa pätevyydet uudestaan tästä napista
+Careers_Career_Deleted;Työntekijä poistettu
+Careers_Job_Title;Työtehtävä
+Careers_Salary;Palkka
+Careers_Tes;TES
+Careers_Start_Date;Aloituspäivämäärä
+Careers_New_Career_Failed;Ansioluttelon liitetiedoston siirtäminen palvelimelle onnistui
+Careers_New_Qualification_Failed;Pätevyyden liitetiedostojen siirtäminen palvelimelle epäonnstui
+Careers_Taxation_City;Verotuskunta
+Careers_Basic_Prosent;Verotuksen perus %
+Careers_Extra_Prosent;Verotuksen lisä % 
+Careers_Yearlysalarylimit;Vuosituloraja
+Careers_Taxationcountingmethod;Verolaskennan tapa 
+Careers_Taxcard_Come_Into_Effect_Date;Verokortin voimaantulo päivä 
+Careers_Retrimentmodel;Eläkevakuutusmalli
+Careers_AY_Membershippaymentpersent;AY-jäsenmaksu %
+Careers_BIC;BIC
+Careers_Qualifications;Pätevyydet
+Careers_Taxcards;Verokortit
+Careers_Notaxcards;Ei verokortteja
+Careers_Date_Come_To_Effective;Verokortin voimaantulo päivä 
+Careers_Download_Taxcards;Lataa verokortti
+Careers_Download_Taxcards_Tooltip;Lataa verokortti tästä napista
+Careers_New_Taxcard;Lisää uusi verokortti
+Careers_New_Taxcard_Tooltip;Lisää uusi verokortti tästä napista
+Careers_Delete_Taxcard;Poista verokortti
+Careers_Delete_Taxcard_Tooltip;Poista verokortti tästä napista
+Careers_Replace_Taxcard;Korvaa nykyinen verokortti
+Careers_Replace_Taxcard_Tooltip;Korvaa nykyinen verokortti tästä napista
+Careers_Replace_Taxcard;Korvaa nykyinen verokortti
+Careers_Replaced_Tc;Verokortti korvattu uudella liitteellä
+Career_Taxcard_Deleted;Verokortti poistettu
+Careers_New_Taxcard_Created;Uusi verokortti lisätty
+Careers_New_Taxcard_Failed;Verokortin lisäys epäonnistui
+Careers_Select_Pdf_Label_Taxcard;Valitse liitetiedosto

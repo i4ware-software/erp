@@ -1,0 +1,25 @@
+Customers_Customers;Yhtiöt
+Customers_Refresh;Päivitä
+Customers_New_Customer;Lisää uusi yhtiö
+Customers_Search;Etsi
+Customers_No_Customers;Ei yhtiöitä
+Customers_Submit;Lisää uusi yksikkö
+Customers_Close;Peruuta
+Customers_Error;Error
+Customers_Success;Onnistui
+Customers_Sending;Lähettää
+Customers_New_Customer_Created;Uusi yhtiö luotu
+Customers_Delete;Poista yhtiö
+Customers_Delete_Tooltip;Poista yhtiö tästä napista
+Customers_Are_You_Sure;Oletko varma
+Customers_Are_You_Sure_Text;Toimintoa ei voi peruutta
+Customers_Page;Sivu
+Customers_Customer_Name;Yhtiön nimi
+Customers_Http_Integration;HRM-integratioavain
+Customers_Http_Integration_Link;HRM-integratiolinkki
+Customers_Customer_Email;Sähköpostiosoite
+Customers_Customer_Phone;Vaihteen puhlinnumero
+Customers_Customer_Zip;Postinumero
+Customers_Customer_City;Postitoimipaikka
+Customers_Customer_Address;Osoite
+Customers_Vat_Id;Y-tunnus

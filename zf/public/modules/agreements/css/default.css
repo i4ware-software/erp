@@ -1,0 +1,56 @@
+/*!
+ * Ext JS Library 3.0+
+ * Copyright(c) 2006-2009 Ext JS, LLC
+ * licensing@extjs.com
+ * http://www.extjs.com/license
+ */
+ 
+/*.super-select-grid {
+    height: 100px !important;
+    padding: 30px 60px;
+    color:red;
+}*/
+
+.x-grid3-row.super-select-grid-red .x-grid3-cell
+{
+    background-color: #f9c;
+    /*height:80px;*/
+}
+
+.x-grid3-row.super-select-grid-green .x-grid3-cell
+{
+    background-color: #9fc;
+    /*height:80px;*/
+}
+
+.x-grid3-row.super-select-grid-blue .x-grid3-cell
+{
+    background-color: #c9f;
+    /*height:80px;*/
+}
+
+.x-grid3-row.super-select-grid-grey .x-grid3-cell
+{
+    background-color: #999;
+    /*height:80px;*/
+}
+
+/*.x-superboxselect-btns {
+    z-index:99999;
+}
+
+.x-superboxselect-input {
+    z-index:99999;
+}
+
+.x-superboxselect {
+    z-index:99999;
+}*/
+
+.x-superboxselect-item {
+	position:relative;
+	float:none;
+	clear:none;
+    z-index:9999;
+    font-size:9px;
+}

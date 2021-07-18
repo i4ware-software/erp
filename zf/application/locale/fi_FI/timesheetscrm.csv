@@ -1,0 +1,37 @@
+Timesheetscrm_Timesheetscrm;Tuntikorttien kierrätys
+Timesheetscrm_Euro;€
+Timesheetscrm_Fullname;Nimi
+Timesheetscrm_Username;Käyttäjän nimi
+Timesheetscrm_Next;Seuraava käsittelijä
+Timesheetscrm_Status;Status
+Timesheetscrm_Agreement_Id;Työsopimus
+Timesheetscrm_Timesheet_Name;Selite
+Timesheetscrm_Refresh;Lataa
+Timesheetscrm_Refresh_Tooltip;Lataa tuntikortit tästä napista uudestaan
+Timesheetscrm_Search;Etsi
+Timesheetscrm_Page;Sivu
+Timesheetscrm_No_Timesheets;Ei yhtään tuntikorttia
+Timesheetscrm_Edit_Timesheet;Tarkasta valittu tuntikortti
+Timesheetscrm_Edit_Timesheet_Tooltip;Tarkasata valittu tuntikortti tästä napista
+Timesheetscrm_Create_New;Lisää uusi tuntikortti
+Timesheetscrm_Create_New_Tooltip;Lisää uusi tuntikortti tästä napista
+Timesheetscrm_Agreement;Työsopimus
+Timesheetscrm_Submit;Tallenna
+Timesheetscrm_Close;Peruuta
+Timesheetscrm_Sending;Tallentaa
+Timesheetscrm_Success;Onnistui
+Timesheetscrm_Error;Virhe
+Timesheetscrm_Success_Text;Tuntikortin luonti onnistui
+Timesheetscrm_Memo;Memo
+Timesheetscrm_Order_Id;Tilausvahvistus
+Timesheetscrm_Occupation;Ammattinimike
+Timesheetscrm_True;Kyllä
+Timesheetscrm_False;Ei
+Timesheetscrm_Agree_Agreement;Hyväksy
+Timesheetscrm_Agree_Agreement_Tooltip;Hyväksy yleisetsopimusehdot tästä napista
+Timesheetscrm_Sent_To_Hrm;Asiakas hyväksyi tuntikortin
+Timesheetscrm_Return_To_Employee;Asiakas palautti tuntikortin virheellisänä
+Timesheetscrm_Hour_Status_Incorrect;Hylkää/hyväksy valikoista pitää valita joko hylkää tai hyväksy
+Timesheetscrm_Memo_Missing;Yhdestä tai useammasta hylätystä rivistä puutuu memo!
+Timesheetscrm_Hour_Status_Incorrect_Not_Can;Et voi hyväksyä tuntikorttia jos et ole valinnut kaikkin kenttiin Hyväksytty
+Timesheetscrm_Hour_Status_Incorrect_Not_Can_All;Et voi hylätä tuntikorttia jos kaikkiin kenttiin on valittu Hyväksytty

@@ -1,0 +1,86 @@
+Jobseekers_Jobseekers;Resurssit
+Jobseekers_Startplace;Työhönottopaikka
+Jobseekers_Employee;Resussi
+Jobseekers_Address;Osoite
+Jobseekers_Zip;Postinumero
+Jobseekers_City;Postitoimipaikka
+Jobseekers_Email;Sähköpostiosoite
+Jobseekers_Phone;Puhelinnumero
+Jobseekers_Taxnumber;Veronumero
+Jobseekers_Sotu;Henkilötunnus
+Jobseekers_No_Jobseekers;Ei työnhakijoita
+Jobseekers_Page;Sivu
+Jobseekers_Search;Etsi
+Jobseekers_Refresh;Lataa resurssit uudestaan
+Jobseekers_Refresh_Tooltip;Lataa resursit uudestaan tästä napista
+Jobseekers_Career;Lisää uusi resurssi
+Jobseekers_Career_Tooltip;Lisää uusi resurssi tästä napista
+Jobseekers_Close;Peruuta
+Jobseekers_Submit;Talenna
+Jobseekers_New_Jobseeker_Created;Uusi resurssi luotu
+Jobseekers_Select_Pdf;Valitse PDF
+Jobseekers_Select_Pdf_Label;CV
+Jobseekers_Only_Pdf_Allowe;Vain PDF-tiedosto käy
+Jobseekers_Download;Lataa CV
+Jobseekers_Download_Tooltip;Lataa CV tästä napista
+Jobseekers_Firstname;Etunimi
+Jobseekers_Lastname;Sukunimi
+Jobseekers_Qualification_Name;Pätevyys
+Jobseekers_Employee_Name;Työntekijän nimi
+Jobseekers_Date_Completed;Voimassa päivämäärään asti
+Jobseekers_Active;Voimassa
+Jobseekers_Experience_In_Years;Kokemus vuosina
+Jobseekers_No_Qualifications;Ei pätevyyksiä
+Jobseekers_True;Kyllä
+Jobseekers_False;Ei
+Jobseekers_Year;-vuosi
+Jobseekers_Years;-vuotta
+Jobseekers_Refresh_Qualifications;Lalaa pätevyydet uudestaan
+Jobseekers_New_Qualification;Lisää uusi pätevyys
+Jobseekers_New_Qualification_Tooltip;Lisää uusi pätevyys tästä napista
+Jobseekers_Select_Pdf_Label_Qualification;Pätevyys todistus
+Jobseekers_Effective_Date;Voimassaolo päivämäärä
+Jobseekers_Missing;Puuttuu
+Jobseekers_New_Qualification_Created;Uusi pätevyys lisätty
+Jobseekers_Download_Certificate;Lataa todistus
+Jobseekers_Download_Certificate_Tooltip;Lataa todistus tästä napista
+Jobseekers_Missing_City;Tieto puutuu lataa uudestaan
+Jobseekers_Error;Virhe
+Jobseekers_Are_You_Sure_Title;Oletko varma?
+Jobseekers_Are_You_Sure_Text;Oletko varma, että haluat siirää työnhakijan työntekijöihin?
+Jobseekers_Are_You_Sure_Delete_Text;Oletko varma, että haluat poista pätevyyden?
+Jobseekers_Delete_Qualification;Poista pätevyys
+Jobseekers_Delete_Qualification_Tooltip;Poista pätevyys tästä napista
+Jobseekers_Qualification_Deleted;Pätevyys poistettu
+Jobseekers_Employee_Moved;Resurssi siirretty työntekijöihin
+Jobseekers_Success;Onnistu
+Jobseekers_Sending;Lähettää
+Jobseekers_Move_Career;Siirrä resurssi työntekijöihin
+Jobseekers_Move_Career_Tooltip;Siirrä resurssi työntekijöihin tästä napista
+Jobseekers_Replace_CV;Korvaa vanha CV
+Jobseekers_Replace_CV_Tooltip;Korvaa vanha CV tästä napista
+Jobseekers_Replaced;Vanha CV korovattu
+Jobseekers_Bank_Account;IBAN
+Jobseekers_Replace_Qualification;Korvaa pätevyyden vanha liite
+Jobseekers_Replace_Qualification_Tooltip;Korvaa pätevyyden vanha liite tästä napista
+Jobseekers_Replace_Qa;Korvaa pätevyyden vanha liite
+Jobseekers_Replaced_Qa;Pätevyys todistus korvattu
+Jobseekers_Refresh_Tooltip;Lalaa pätevyydet uudestaan tästä napista
+Jobseekers_Move_Career_Tooltip;Siirrä resurssi työntekijöihin tästä napista
+Jobseekers_Delete_Career;Poista resussi
+Jobseekers_Delete_Career_Tooltip;Poista resussi tästä napista
+Jobseekers_Are_You_Sure_Delete_Career_Text;Oletko varma, että haluat poista resurssin?
+Jobseekers_Career_Deleted;Resurssi poistettu
+Jobseekers_New_Jobseeker_Created;Uusi resurssi luotu
+Jobseekers_New_Jobseeker_Failed;Ansioluttelon liitetiedoston siirtäminen palvelimelle epäonnistui
+Jobseekers_New_Qualification_Failed;Pätevyyden liitetiedoston siirtäminen palvelimelle epäonnistui
+Jobseekers_BIC;BIC
+Jobseekers_Taxation_City;Verotuskunta
+Jobseekers_Basic_Prosent;Verotuksen perus %
+Jobseekers_Extra_Prosent;Verotuksen lisä % 
+Jobseekers_Yearlysalarylimit;Vuosituloraja
+Jobseekers_Taxationcountingmethod;Verolaskennan tapa 
+Jobseekers_Taxcard_Come_Into_Effect_Date;Verokortin voimaantulo päivä 
+Jobseekers_Retrimentmodel;Eläkevakuutusmalli
+Jobseekers_AY_Membershippaymentpersent;AY-jäsenmaksu %
+Jobseekers_Replaced_Tc;Verokortti korvattu uudella liitteellä

@@ -1,0 +1,65 @@
+Users_Module;Käyttäjät
+Users_ID;ID
+Users_Allow;Salli
+Users_Deny;Estä
+Users_Page;Sivu
+Users_Displaying;Näyttää
+Users_Of;of
+Users_De_Select;Poista valinnat
+Users_Refresh;Lataa
+Users_De_Select_Tooltip;Poista valinnat tästä napista
+Users_Refresh_Tooltip;Lataa tästä napista
+Users_Username;Käyttäjätunnus
+Users_Email;Sähköposti
+Users_Date_of_Birth;Syntymäaika
+Users_Action;Aktioni
+Users_Access;Pääsy
+Users_Update;Päivitä
+Users_Cancel;Peruuta
+Users_Items;Käyttäjää
+Users_Item;Käyttäjä
+Users_Company;Yritys
+Users_New_User;Lisää uusi käyttäjä
+Users_New_User_Tooltip;Lisää uusi käyttäjä tästä napista
+Users_Firstname;Etunimi
+Users_Lastname;Sukunimi
+Users_Password;Salasana
+Users_Verify;Vahvista
+Users_Warning;Varoitus
+Users_Error;Virhe
+Users_Submit;Tallenna
+Users_Close;Sulje
+Users_Loading;Lataa…
+Users_Sending;Tallentaa…
+Users_Generate;Generoi
+Users_Copy_Paste;Kopioi ja liitä
+Users_Generate_Password;Generoi tietoturvallinen salasana
+Users_Userrole;Rooli
+Users_Success;Onnistui
+Users_New_User_Created;Uusi käyttäjä luotu
+Users_Password_Verify_Failure;Salasanan vahvistus epäonnistui
+Users_Role;Rooli
+Users_Fullname;Kokonimi
+Users_Change_Password;Vaihda valitun käyttäjän salasana
+Users_Change_Password_Tooltip;Vaihda käyttäjän salasana tästä napista
+Users_Edit_User;Editoi valittua käyttäjää
+Users_Edit_User_Tooltip;Editoi valittua käyttäjää tästä napista
+Users_New_User_Edited;Käyttäjän tietoja on nyt muutettu
+Users_New_User_Edited_Failed;Käyttäjän editointi epäonnistui
+Users_Delete;Poista valittut käyttäjät
+Users_Delete_Tooltip;Poista valittut käyttäjä tästä napista
+Users_Are_You_Sure_Title;Oletko varma
+Users_Are_You_Sure_Text;Oletko varma, että haluat poistaa valitut käyttäjät
+Users_Delete_Failed;Et voi poistaa pääkäyttäjää nimellä admin
+Users_Leader;Hyväksyjä
+Users_Yes;Kyllä
+Users_No;Ei
+Users_Agreement_Accepted;Sopimus hyväksytty
+Users_Agreement_Accepted_Date;Sopimuksen hyväksymis päivämäärä
+Users_True;Kyllä
+Users_False;Ei
+Users_Firstname;Etunimi
+Users_Lastname;Sukunimi
+Users_Phone;Puhelinnumero
+Users_No_Users;Ei käyttäjiä
+Users_Search;Etsi

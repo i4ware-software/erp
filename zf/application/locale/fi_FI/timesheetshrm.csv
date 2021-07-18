@@ -1,0 +1,25 @@
+Timesheetshrm_Timesheetshrm;Tuntikorttien kierrätys
+Timesheetshrm_Euro;€
+Timesheetshrm_Fullname;Nimi
+Timesheetshrm_Username;Käyttäjän nimi
+Timesheetshrm_Next;Seuraava käsittelijä
+Timesheetshrm_Status;Status
+Timesheetshrm_Agreeement_Id;Työsopimus
+Timesheetshrm_Timesheet_Name;Selite
+Timesheetshrm_Refresh;Lataa
+Timesheetshrm_Refresh_Tooltip;Lataa tuntikortit tästä napista uudestaan
+Timesheetshrm_Search;Etsi
+Timesheetshrm_Page;Sivu
+Timesheetshrm_No_Timesheets;Ei yhtään tuntikorttia
+Timesheetshrm_Edit_Timesheet;Tarkasta valittu tuntikortti
+Timesheetshrm_Edit_Timesheet_Tooltip;Tarkasata valittu tuntikortti tästä napista
+Timesheetshrm_Create_New;Lisää uusi tuntikortti
+Timesheetshrm_Create_New_Tooltip;Lisää uusi tuntikortti tästä napista
+Timesheetshrm_Agreement;Työsopimus
+Timesheetshrm_Submit;Tallenna
+Timesheetshrm_Close;Peruuta
+Timesheetshrm_Sending;Tallentaa
+Timesheetshrm_Success;Onnistui
+Timesheetshrm_Error;Virhe
+Timesheetshrm_Success_Text;Tuntikortin luonti onnistui
+Timesheetshrm_Memo;Memo

@@ -1,0 +1,29 @@
+Profitcenters_Profitcenters;Kustannuspaikat
+Profitcenters_Nimi;Selite
+Profitcenters_Deselect;Poista valinnat
+Profitcenters_Deselect_Tooltip;Poista valinnat tästä napista
+Profitcenters_Refresh;Lataa
+Profitcenters_Refresh_Tooltip;Lataa tästä napista
+Profitcenters_Add_New;Lisää kusannnuspaikka
+Profitcenters_Add_New_Tooltip;Lisää kustannuspaikka tästä napista
+Profitcenters_Delete;Poista kustannuspaikka
+Profitcenters_Delete_Tooltip;Poista kustannuspaikka tästä napista
+Profitcenters_Submit;Tallenna
+Profitcenters_Close;Sulje
+Profitcenters_Error;Virhe
+Profitcenters_Success;Onnistui
+Profitcenters_Are_You_Sure_Title;Oletko varma?
+Profitcenters_Are_You_Sure_Text;Oletko varma, että haluat poistaa valitun kustannuspaikan?
+Profitcenters_Sending;Tallentaa…
+Profitcenters_Loading;Lataa...
+Profitcenters_New;Lisää uusi kustannuspaikka
+Profitcenters_Profitcenter_Id;Numero
+Profitcenters_Profitcenter_Nimi;Selite
+Profitcenters_Export;Tuo
+Profitcenters_Export_Tooltip;Tuo kustannuspaikat xls tiedostona tästä napistä
+Profitcenters_Import;Vie
+Profitcenters_Import_Tooltip;Vie kustannuspaikat xls tiedostona tästä napista
+Profitcenters_Select_Xls;XLS-tiedosto
+Profitcenters_Select_Xls_Label;XLS
+Profitcenters_Only_Xls_Allowed;Voit valita vain XLS-tiedoston
+Profitcenters_Browse;Selaa...

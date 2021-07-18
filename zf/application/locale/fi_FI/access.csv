@@ -1,0 +1,21 @@
+Access_Module;Oikeustasot
+Access_ID;ID
+Access_Allow;Salli
+Access_Deny;Estä
+Access_Page;Sivu
+Access_Displaying;Näyttää
+Access_Of;of
+Access_De_Select;Poista valinnat
+Access_Refresh;Lataa
+Access_De_Select_Tooltip;Poista valinnat tästä napista
+Access_Refresh_Tooltip;Lataa tästä napista
+Access_Rolename;Rooli
+Access_Roleinherit;Roolin periytyvyys
+Access_Module_;Moduuli
+Access_Controller;Kontrolleri
+Access_Action;Aktioni
+Access_Access;Pääsy
+Access_Update;Päivitä
+Access_Cancel;Peruuta
+Access_Items;Pääsyä
+Access_Item;Pääsy

@@ -1,0 +1,52 @@
+Default_Login;Kirjaudu
+Default_Login_Form;Kirjautuminen
+Default_Username;Käyttäjätunnus
+Default_Password;Salasana
+Default_Menu;Menu
+Default_Logout;Kirjaudu ulos
+Default_Logout_Tooltip;Kirjaudu ulos painamalla tätä nappia
+Default_My_Account;Minun tili
+Default_Application;Tervetuloa
+Default_Applications;Ohjelmat
+Default_Firstname;Etunimi
+Default_Lastname;Sukunimi
+Default_Email;Sähköposti
+Default_Date_of_Birth;Syntymäaika
+Default_Save;Tallenna
+Default_Sign;Rekisteröidy
+Default_Load;Lataa
+Default_Saving;Tallenttaa…
+Default_Loading;Lataa...
+Default_Generate;Generoi
+Default_Old_Password;Vanha salasana
+Default_New_Password;Uusi salasana
+Default_Verify;Vahvista
+Default_Company;Yritys
+Default_Copy_Paste;Kopioi ja liitä
+Default_Change;Vaihda
+Default_Loading;Lataa...
+Default_My_Contact_Info;Yhteystiedot
+Default_Change_Password;Vaihda salasana
+Default_Generate_Password;Generoi salasana
+Default_Denied;Sinulla ei ole vaadittuja oikeuksia!
+Default_Warning;Varoitus
+Default_Change_Warning;Vanha salasana ei ole oikein tai vahvistus meni väärin!
+Default_Change_Success;Salasana vaihdettu
+Default_Account_Save_Success;Tilin tiedot tallennettu
+Default_Success;Onnistui
+Default_Identify_Failed;Identifiointi epäonnistui!
+Default_Identify_Failed_Msg;Salasana tai käyttäjätunnus on väärin!
+Default_Close;Sulje
+Default_Error;Virhe
+Default_Date_of_Birth;Syntymäaika
+Default_Firstname;Etunimi
+Default_Lastname;Sukunimi
+Default_Confirm_Password;Vahvista salasana
+Default_Email;Sähköposti
+Default_Company;Yritys
+Default_You_Have_Agreement;Salasana tai käyttäjätunnus on väärin!
+Default_You_Have_No_Agreement;Sinulla ei ole voimassaolevaa työsopimusta tai salasana tai käyttäjätunnus on väärin!
+Default_You_Do_Not_Need_Agreement;Salasana tai käyttäjätunnus on väärin!
+Default_Lost_Password;Unohditko salasanasi?
+Default_Lost_Password_Msg;Sähköpostiosoite on väärin!
+Default_Lost_Password_Failed;Syötä sähköpostiosoite!

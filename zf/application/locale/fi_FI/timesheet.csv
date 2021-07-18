@@ -1,0 +1,55 @@
+Timesheet_Timesheet;Tuntikorttit
+Timesheet_Euro;€
+Timesheet_Fullname;Nimi
+Timesheet_Username;Käyttäjän nimi
+Timesheet_Next;Seuraava käsittelijä
+Timesheet_Status;Status
+Timesheet_Agreeement_Id;Työsopimus
+Timesheet_Timesheet_Name;Selite
+Timesheet_Refresh;Lataa
+Timesheet_Refresh_Tooltip;Lataa tuntikortit tästä napista uudestaan
+Timesheet_Search;Etsi
+Timesheet_Page;Sivu
+Timesheet_No_Timesheets;Ei yhtään tuntikorttia
+Timesheet_Edit_Timesheet;Muokkaa valittua tuntikorttia
+Timesheet_Edit_Timesheet_Tooltip;Muokkaa valittua tuntikorttia tästä napista
+Timesheet_Create_New;Lisää uusi tuntikortti
+Timesheet_Create_New_Tooltip;Lisää uusi tuntikortti tästä napista
+Timesheet_Agreement;Työsopimus
+Timesheet_Submit;Tallenna
+Timesheet_Close;Peruuta
+Timesheet_Sending;Tallentaa
+Timesheet_Success;Onnistui
+Timesheet_Error;Virhe
+Timesheet_Success_Text;Tuntikortin luonti onnistui
+Timesheet_Access_Denied;Ei oikeuksia
+Timesheet_Access_Denied_Text;Tuntikortti on käsittelyssä toisella käyttäjällä 
+Timesheet_Memo;Memo
+Timesheet_Occupation;Ammattinimike
+Timesheet_Order_Id;Tilausvahvistus
+Timesheet_Time_Value_Incorect;Syötit työtunnin virhellisessä desimaalimuodossa! Sallitut desimaalit ovat .0, .00, .25, .5, .50 ja .75!
+Timesheet_You_Are_Not_Allowed;Ei oikeuksia
+Timesheet_Start_Date;Aloituspäivä
+Timesheet_Date_Completed;Lopetuspäivä
+Timesheet_Permanent;Toistaiseksi
+Timesheet_True;Kyllä
+Timesheet_False;Ei
+Timesheet_Agree_Agreement;Kuittaa luetuksi
+Timesheet_Agree_Agreement_Tooltip;Kuittaa luetuksi työsuojelu tästä napista
+Timesheet_Agree_Agreement_Alert_Title;Työsuojelu- ja työturvallisuusohje
+Timesheet_Agree_Agreement_Alert_Text;"Pyydämme sinua ystävällisesti perehtymään oheiseen työturvallisuus- ja työsuojeluohjeeseen. Luettuasi ohjeen, ole hyvä ja kuittaa se luetuksi painamalla selainikkunan vasemmassa alakulmassa olevaa ""Kuittaa luetuksi""-painiketta. Ohje kuitataan luetuksi vain tämän kerran, eikä sitä näytetä sinulle enää jatkossa. Kuitattuasi ohjeen luetuksi pääset hallinnoimaan tuntikorttejasi."
+Timesheet_Timesheet_Created;Loi tuntikortin
+Timesheet_Sent_To_Customer;Lähetti tuntikortin tarkastettavaksi asiakkaalle
+Timesheet_Time_Value_Incorect_Over_24;Et voi syöttää yli 24 tuntia
+Timesheet_Time_Value_Incorect_Over_8;Et voi syöttää yli 8 tuntia norm. kenttään
+Timesheet_Time_Value_Incorect_Under_0;Et voi syöttää alle 0 tuntia
+Timesheet_HTML_Welcome;Terve,
+Timesheet_HTML_Person_1;Teille on tullut henkilöltä
+Timesheet_HTML_Person_2;aikajaksolta
+Timesheet_HTML_Person_3;työkohteesta
+Timesheet_HTML_Person_4;asiatarkastettavaksi.
+Timesheet_HTML_Check_1;Tarkastattehan tuntikortin ennen ensisijassa viimeistään sopimusehtojemme mukaisten määräaikojen mukaan.
+Timesheet_HTML_Check_2;Jos tuntikorttia ei ole tarkastattu sopimusehdoissamme määräyttyjen määräaikojen mukaisesti katsotaan se hyväksytyksi jotta työntekijällemme voidaan maksaa palkka työehtosopimusten mukaisesti.
+Timesheet_HTML_Link_Text_1;Tuntikortin pääsette tarkastamaan painamalla
+Timesheet_HTML_Link_Text_2;TÄSTÄ LINKISTÄ
+Timesheet_Value_Is_Not_Integer;Kilometrikorvaus pitää olla kokonaisluku

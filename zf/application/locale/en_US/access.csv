@@ -1,0 +1,19 @@
+﻿Access_Module;Privileges
+Access_ID;ID
+Access_Allow;Allow
+Access_Deny;Deny
+Access_Page;Page
+Access_Displaying;Displaying
+Access_Of;of
+Access_De_Select;Deselect Rows
+Access_Refresh;Refresh
+Access_Rolename;Role
+Access_Roleinherit;Role Inherit
+Access_Module_;Module
+Access_Controller;Controller
+Access_Action;Action
+Access_Access;Access
+Access_Update;Update
+Access_Cancel;Cancel
+Access_Items;Items
+Access_Item;Item

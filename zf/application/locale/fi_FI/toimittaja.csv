@@ -1,0 +1,46 @@
+Toimittaja_Toimittaja;Toimittajat
+Toimittaja_Nimi;Nimi
+Toimittaja_Ytunnus;Y-tunnus
+Toimittaja_Sahkoposti;Sähköposti
+Toimittaja_Osoite;Osoite
+Toimittaja_Puhelinnumero;Puhelinnumero
+Toimittaja_Maksuehto;Maksuehto
+Toimittaja_Toimitusehto;Toimitusehto
+Toimittaja_Deselect;Poista valinnat
+Toimittaja_Deselect_Tooltip;Poista valinnat tästä napista
+Toimittaja_Refresh;Lataa
+Toimittaja_Refresh_Tooltip;Lataa tästä napista
+Toimittaja_Muut_Maksutiedot;Muut maksutiedot
+Toimittaja_Lisaa_Toimittaja;Lisää toimittaja
+Toimittaja_Lisaa_Toimittaja_Tooltip;Lisää toimittaja tästä napista
+Toimittaja_Delete;Poista toimittaja
+Toimittaja_Delete_Tooltip;Poista toimittaja tästä napista
+Toimittaja_New;Lisää uusi toimittaja
+Toimittaja_New_Category;Lisää uusi kategoria
+Toimittaja_Submit;Tallenna
+Toimittaja_Close;Sulje
+Toimittaja_Error;Virhe
+Toimittaja_Success;Onnistui
+Toimittaja_Uusi_Toimittaja_Lisatty;Uusi toimittaja lisätty
+Toimittaja_Puuttuu;puuttuu
+Toimittaja_Kategoria;Kategoria
+Toimittaja_Are_Yuo_Sure_Title;Oletko varma?
+Toimittaja_Are_You_Sure_Text;Oletko varma, että haluat poistaa valitun toimittajan?
+Toimittaja_Categories;Kategoriat
+Toimittaja_Category_New;Lisää uusi kategoria
+Toimittaja_Sending;Tallentaa…
+Toimittaja_Loading;Lataa...
+Toimittaja_Category_New_Tooltip;Lisää uusi kategoria tästä napista
+Toimittaja_Delete_Category;Poista kategoria
+Toimittaja_Delete_Category_Tooltip;Poista kategoria tästä napista
+Toimittaja_Are_You_Sure_Text_Category;Oletko varma, että haluat poistaa valitun kategorian?
+Toimittaja_Uusi_Toimittaja__Kategoria_Lisatty;Uusi kategoria lisätty
+Toimittaja_Tilinumero;Tilinumero
+Toimittaja_Laske_IBAN;Laske IBAN
+Toimittaja_IBAN_Laskuri;IBAN Laskuri
+Toimittaja_Delete_Maksuehto;Poista maksuehto
+Toimittaja_Delete_Maksuehto_Tooltip;Poista maksuehto tästä napista
+Toimittaja_New_Maksuehto;Lisää maksuehto
+Toimittaja_New_Maksuehto_Tooltip;Lisää maksuehto tästä napista
+Toimittaja_Maksuehto_Paivaa;Päivää
+Toimittaja_Maksuehto_Tyyppi;Tyyppi

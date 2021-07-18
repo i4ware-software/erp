@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ostoseskontra</title>
+<link rel="stylesheet" type="text/css" href="/zf/public/ext/resources/css/ext-all.css" />
+<script type="text/javascript" src="/zf/public/ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="/zf/public/ext/ext-all.js"></script>
+<script type="text/javascript" src="/zf/public/js/FileUploadField.js"></script>
+<script type="text/javascript" src="/zf/public/js/Ext.ux.recaptcha.js"></script>
+<script type="text/javascript" src="/zf/public/js/RowExpander.js"></script>
+<script type="text/javascript" src="/zf/public/js/Ext.ux.grid.Search.js"></script>
+<script type="text/javascript" src="/zf/public/js/LockingGridView.js"></script>
+<script type="text/javascript" src="/zf/public/js/GroupSummary.js"></script>
+<script type="text/javascript" src="/zf/public/js/miframe.js"></script>
+
+<script type="text/javascript" src="/zf/public/timesheetconfig/javascript/index"></script>
+
+<link rel="stylesheet" type="text/css" href="/zf/public/themes/x-theme-<?= $this->layout ?>/resources/css/xtheme-<?= $this->layout ?>.css">
+<link rel="stylesheet" type="text/css" href="/zf/public/css/LockingGridView.css" />
+<link rel="stylesheet" type="text/css" href="/zf/public/css/icons.css" />
+<link rel="stylesheet" type="text/css" href="/zf/public/css/fileuploadfield.css" />
+<link rel="stylesheet" type="text/css" href="/zf/public/css/GroupSummary.css" />
+</head>
+<body>
+<!-- Start -->
+<div id="ConfigGrid"></div>
+<div id="CompilationGrid"></div>
+Muuttujat: {agreements} (<?= $this->agreements ?>), {qualifications} (<?= $this->qualifications ?>) ja {trials} (<?= $this->trials ?>).<br /><br />
+<div id="TimesheetGrid"></div>
+Muuttujat: {fullname} (<?= $this->fullname ?>) ja {erp_link} (<?= $this->erplink ?>)<br /><br />
+<div id="EmployeeGrid"></div>
+Muuttujat: {fullname} (<?= $this->fullname ?>), {fullname_employee} (<?= $this->fullname_employee ?>), {startdate} (<?= $this->startdate ?>), {enddate} (<?= $this->enddate ?>), {workplace} (<?= $this->workplace ?>), {company_name} (<?= $this->company_name ?>), {switch_phonenumber} (<?= $this->switch_phonenumber ?>), {company_email} (<?= $this->company_email ?>), {erp_link} (<?= $this->erplink ?>), {customer_person_company} (<?= $this->customer_person_company ?>), {customer_person_name} (<?= $this->customer_person_name ?>) ja {customer_person_email} (<?= $this->customer_person_email ?>).<br /><br />
+<div id="CustomerAgreesGrid"></div>
+Muuttujat: {fullname} (<?= $this->fullname ?>), {fullname_employee} (<?= $this->fullname_employee ?>), {startdate} (<?= $this->startdate ?>), {enddate} (<?= $this->enddate ?>), {workplace} (<?= $this->workplace ?>), {company_name} (<?= $this->company_name ?>), {switch_phonenumber} (<?= $this->switch_phonenumber ?>), {company_email} (<?= $this->company_email ?>), {erp_link} (<?= $this->erplink ?>), {customer_person_company} (<?= $this->customer_person_company ?>), {customer_person_name} (<?= $this->customer_person_name ?>) ja {customer_person_email} (<?= $this->customer_person_email ?>).<br /><br />
+<div id="CustomerDisagreesGrid"></div>
+Muuttujat: {fullname} (<?= $this->fullname ?>), {fullname_employee} (<?= $this->fullname_employee ?>), {startdate} (<?= $this->startdate ?>), {enddate} (<?= $this->enddate ?>), {workplace} (<?= $this->workplace ?>), {company_name} (<?= $this->company_name ?>), {switch_phonenumber} (<?= $this->switch_phonenumber ?>), {company_email} (<?= $this->company_email ?>), {erp_link} (<?= $this->erplink ?>), {customer_person_company} (<?= $this->customer_person_company ?>), {customer_person_name} (<?= $this->customer_person_name ?>) ja {customer_person_email} (<?= $this->customer_person_email ?>).<br /><br />
+<div id="AdminAgreesGrid"></div>
+Muuttujat: {fullname} (<?= $this->fullname ?>), {fullname_employee} (<?= $this->fullname_employee ?>), {startdate} (<?= $this->startdate ?>), {enddate} (<?= $this->enddate ?>), {workplace} (<?= $this->workplace ?>), {company_name} (<?= $this->company_name ?>), {switch_phonenumber} (<?= $this->switch_phonenumber ?>), {company_email} (<?= $this->company_email ?>), {erp_link} (<?= $this->erplink ?>), {customer_person_company} (<?= $this->customer_person_company ?>), {customer_person_name} (<?= $this->customer_person_name ?>) ja {customer_person_email} (<?= $this->customer_person_email ?>).<br /><br />
+<div id="AdminDisagreesGrid"></div>
+Muuttujat: {fullname} (<?= $this->fullname ?>), {fullname_employee} (<?= $this->fullname_employee ?>), {startdate} (<?= $this->startdate ?>), {enddate} (<?= $this->enddate ?>), {workplace} (<?= $this->workplace ?>), {company_name} (<?= $this->company_name ?>), {switch_phonenumber} (<?= $this->switch_phonenumber ?>), {company_email} (<?= $this->company_email ?>), {erp_link} (<?= $this->erplink ?>), {customer_person_company} (<?= $this->customer_person_company ?>), {customer_person_name} (<?= $this->customer_person_name ?>) ja {customer_person_email} (<?= $this->customer_person_email ?>).<br /><br />
+<div id="CronGrid"></div>
+Muuttujat: {username} (<?= $this->username ?>), {fullname} (<?= $this->fullname ?>) ja {erp_link} (<?= $this->erplink ?>).<br /><br />
+<div id="DueDatesGrid"></div>
+Muuttujat: {username} (<?= $this->username ?>), {fullname} (<?= $this->fullname ?>) ja {erp_link} (<?= $this->erplink ?>).<br /><br />
+<!-- End -->
+</body>
+</html>

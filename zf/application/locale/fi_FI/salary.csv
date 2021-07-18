@@ -1,0 +1,71 @@
+Salary_Salary;Yhtiön perus, vero ja tiliöintitiedot
+Salary_Salary_Payment_Basic_Settings;Yhtiön perus, vero ja tiliöintitiedot
+Salary_Company_Name;Yhtiön nimi
+Salary_Contact_Person;Yhteyshenkilö
+Salary_Phone;Yhtiön puhelinnumero
+Salary_Address;Lähiosoite
+Salary_Zip_Code;Postinumero
+Salary_Country;Maa
+Salary_Zip;Postitoimipaikka
+Salary_Submit;Tallenna asetukset
+Salary_Loading;Lataa asetuksia
+Salary_Warning;Virhe ladattaessa asetuksia
+Salary_Error;Virhe tallennettaessa asetuksia
+Salary_Sending;Tallentaa asetuksia
+Salary_Success;Asetukset tallennettu
+Salary_Company_Vat_Number;Yhtiön y-tunnus
+Salary_Bic;Pankki BIC
+Salary_Iban_Account;Pankki IBAN
+Salary_Bank_Account;Pankkitili
+Salary_Basic_Settings;Yhtiön perustiedot
+Salary_Sotu;Sosiaaliturvamaksu % 
+Salary_Company_Tax_And_Payment_Settings;Yhtiön vero ja maksutiedot
+Salary_Year;Vuosi
+Salary_Salary_Id;Palkkaid
+Salary_TyEL_nro_vuositili;TyEL-nro/vuositilitys
+Salary_TyEL_nro_kk_tilitys;TyEL-nro/kk-tilitys 
+Salary_Success_Text;Muutokset tallennettu tietokantaan onnistuneesti
+Salary_AyJsmTunnus;Ammattiyhdistysliikkeen jäsenmaksutili 
+Salary_Payment_Number;Maksatustunnus
+Salary_KuEL_Tunnus;KuEL-tunnus
+Salary_KuEL;KuEL %
+Salary_Tyontekelake;Työntekijän eläkemaksu % 
+Salary_Var53v_tyont_el;53 vuotta täyttäneen eläkemaksu %. 
+Salary_Tyottomyysvakuutus;Työttömyysvakuutusmaksu % 
+Salary_Paivarahamaksu;Päivärahamaksu % 
+Salary_Paivarahamyritt;Päivärahamaksu yrittäjältä % 
+Salary_Vastuuvakuutusmaksu;Vastuuvakuutusmaksu % 
+Salary_Ryhmahvakuutus;Ryhmähenkivakuutusmaksu %
+Salary_Tapaturmavakuutus;Tapaturmavakuutusmaksu %
+Salary_Paivaraha;Päiväraha
+Salary_Osapaivaraha;Osapäiväraha
+Salary_Kilometrikorvaus;Kilometrikorvaus
+Salary_Acconting;Tiliöinnit
+Salary_TyontekELMtili;Työntekijän eläkemaksutili 
+Salary_TyontekTTVakTili;Työntekijän työttömyysturvavakuutustili 
+Salary_AyJsmTili;Ammattiyhdistysliikkeen jäsenmaksutili 
+Salary_Sotu_Maksutili;Sosiaaliturvamaksutili
+Salary_SotuVelkaTili;Sosiaaliturvavelkatili
+Salary_EnnPidValkaTili;Ennakkopidätysvelkatili
+Salary_TyEL_tili;Työntekijän e -läketili 
+Salary_KVTEL_tili;Kunta-alan työnantajien eläkemaksutili 
+Salary_TyottVakTili;Työttömyysvakuutusmaksutili
+Salary_TapaVakaTili;Tapaturmavakuutusmaksutili 
+Salary_RyhmaHVakTili;Ryhmähenkivakuutusmaksutili
+Salary_Muut_Maksut_Tili;Muut maksut-tili 
+Salary_TyEL_Tasetili;Työntekijöiden eläkkeiden tasetili 
+Salary_KVTEL_Tasetili;Kunta-alan työntantajien eläkemaksun tasetili 
+Salary_TyottVakTaseTili;Työttömyysvakuutusmaksun tasetili 
+Salary_TapaVakTaseTili;Tapaturmavakuutuksen tasetili 
+Salary_RyhmaHVakTaseTili;Ryhmähenkivakuutuksen tasetili 
+Salary_LuontaisedutTili;Luontaisedut tili 
+Salary_MuutTaseTili;Muut-tasetili
+Salary_TyELTT;Työeläkevakuutusmaksu - TT:n osuus, alle 53 v.
+Salary_TyELTT53;Työeläkevakuutusmaksu - TT:n osuus, yli 53 v.
+Salary_unemploymentTT;Työttömyysvakuutusmaksu - TT:n osuus, alle 2025000 €
+Salary_unemploymentTTOver;Työttömyysvakuutusmaksu - TT:n osuus, yli 2025000 €
+Salary_liast8to10;Ylityöt, 9-10 tunnin välillä
+Salary_lasat10to24;Ylityöt, yli 10 tuntia
+Salary_su_lisat;Sunnutailisät
+
+

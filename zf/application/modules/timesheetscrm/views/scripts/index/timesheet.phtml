@@ -1,0 +1,2163 @@
+<?php if ($this->no_timesheets) {
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ty&ouml;ntekij&auml;n tuntikortti</title>
+</head>
+<body>
+	<?= $this->no_timesheets ?>
+	
+</body>
+</html>
+<?php	
+} else { 
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ty&ouml;ntekij&auml;n tuntikortti</title>
+
+<script type="text/javascript" src="/zf/public/js/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="/zf/public/js/js/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript" src="/zf/public/js/development-bundle/ui/i18n/jquery-ui-i18n.js"></script>
+<script type="text/javascript" src="/zf/public/js/development-bundle/ui/i18n/jquery.ui.datepicker-fi.js"></script>
+<script type="text/javascript" src="/zf/public/js/globalize.js"></script>
+<script type="text/javascript" src="/zf/public/js/globalize.culture.de-DE.js"></script>
+<script type="text/javascript" src="/zf/public/js/js/jquery.timepicker.js"></script>
+<link href="/zf/public/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+<link rel="stylesheet" type="text/css" href="/zf/public/js/css/zf-light/jquery-ui-1.10.3.custom.css" />
+<link rel="stylesheet" type="text/css" href="/zf/public/js/development-bundle/themes/base/jquery.ui.theme.css" />
+<link rel="stylesheet" type="text/css" href="/zf/public/js/css/jquery.timepicker.css" />
+<style>
+<!--
+form.timesheet_table_main_class input {
+border:0px;
+height:14px;
+}
+* .timesheet_table_main_class {
+font-size:12px;
+}
+
+* .header_cell {
+font-size:14px;
+}
+
+* .timesheet_table tr td .imput_cell {
+ font-size:12px;
+}
+
+.employee_table tr td {
+font-size:16px;
+}
+
+.employee_table_fields tr td {
+height:16px;
+font-size:14px;
+color:blue;
+background-image: url(/zf/public/ext/resources/images/default/s.gif) repeat-x;
+background: transparent;
+z-index:9999;
+}
+
+h3 {
+font-size:16px;
+}
+
+button { font-size: 14px: }
+ label, input { display:block; }
+input.text { margin-bottom:12px; width:95%; padding: .4em; }
+fieldset { padding:0; border:0; margin-top:25px; }
+h1 { font-size: 14px; margin: .6em 0; }
+div#users-contain { width: 350px; margin: 20px 0; }
+div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+.ui-dialog .ui-state-error { padding: .3em; }
+.validateTips { border: 1px solid transparent; padding: 0.3em; }
+
+-->
+</style>
+
+<?php 
+    /**
+     * Timesheet configuration
+     * Here you can dynamically make a new cells, rows, etc. for Timesheet.
+     * @var number_of_columns
+     * @var array_key
+     */
+    $number_of_columns = 20;
+    $number_of_rows = $this->num_rows;
+    //echo $number_of_rows;
+    //$number_of_rows = 20;
+    //$nro_of_columns = 14;
+    $spiner_field_width = 60;
+    $spiner_field_cell_width = 60;
+    $spiner_field_double_width = 240;
+    $spiner_field_double_cell_width = 60;
+    $spiner_field_quad_width = 260;
+    $spiner_field_quad_cell_width = 65;
+    $date_field_width = 100;
+    $date_field_cell_width = 100;
+    $time_field_width = 120;
+    $time_field_cell_width = 60;
+    $checkbox = 60;
+    $checkbox_cell = 60;
+    $double_euro = 60;
+    $double_euro_cell = 60;
+    $double_km = 60;
+    $double_km_cell = 60;
+    $text_field_cell = "";
+    $last_sum_field = 12;
+    $cell_border = "border-left: 1px #CCCCCC solid; border-top: 1px #CCCCCC solid;";
+    
+    $column[0] = "HOUR_STATUS_ID";
+    $column_width[0] = 120;
+    $column_cell_type[0] = "text_field";
+    $column_date_type[0] = 0;
+    
+    $column[1] = "PROJECT_ID";
+    $column_width[1] = 120;
+    $column_cell_type[1] = "text_field";
+    $column_date_type[1] = 1;
+
+    $column[2] = "PVM"; 
+    $column_width[2] = $date_field_cell_width;
+    $column_cell_type[2] = "date";
+    $column_date_type[2] = 2;
+    
+	$column[3] = "KLO_START"; 
+	$column_width[3] = $time_field_cell_width;
+	$column_cell_type[3] = "time_start";
+	$column_date_type[3] = 3;
+	
+	$column[4] = "KLO_END"; 
+	$column_width[4] = $time_field_cell_width;
+	$column_cell_type[4] = "time_end";
+	$column_date_type[4] = 4;
+	
+	$column[5] = "NORMIPAIVA"; 
+	$column_width[5] = $spiner_field_cell_width;
+	$column_cell_type[5] = "spinner_hour";
+	$column_date_type[5] = 5;
+	
+	$column[6] = "LA"; 
+	$column_width[6] = $spiner_field_cell_width;
+	$column_cell_type[6] = "spinner_hour";
+	$column_date_type[6] = 6;
+	
+	$column[7] = "SU"; 
+	$column_width[7] = $spiner_field_cell_width;
+	$column_cell_type[7] = "spinner_hour";
+	$column_date_type[7] = 7;
+	
+	$column[8] = "LISAT_ILTA"; 
+	$column_width[8] = $spiner_field_double_cell_width;
+	$column_cell_type[8] = "spinner_hour_double_first";
+	$column_date_type[8] = 8;
+	
+	$column[9] = "LISAT_YO"; 
+	$column_width[9] = $spiner_field_double_cell_width;
+	$column_cell_type[9] = "spinner_hour_double_second";
+	$column_date_type[9] = 9;
+	
+	$column[10] = "YLITYO_VRK_50"; 
+	$column_width[10] = $spiner_field_quad_cell_width;
+	$column_cell_type[10] = "spinner_hour_quad_first";
+	$column_date_type[10] = 10;
+	
+	$column[11] = "YLITYO_VRK_100"; 
+	$column_width[11] = $spiner_field_quad_cell_width;
+	$column_cell_type[11] = "spinner_hour_quad_second";
+	$column_date_type[11] = 11;
+	
+	$column[12] = "YLITYO_VEK_50"; 
+	$column_width[12] = $spiner_field_quad_cell_width;
+	$column_cell_type[12] = "spinner_hour_quad_third";
+	$column_date_type[12] = 12;
+	
+	$column[13] = "YLITYO_VEK_100"; 
+	$column_width[13] = $spiner_field_quad_cell_width;
+	$column_cell_type[13] = "spinner_hour_quad_fourth";
+	$column_date_type[13] = 13;
+	
+	$column[14] = "ATV"; 
+	$column_width[14] = $spiner_field_cell_width;
+	$column_cell_type[14] = "spinner_hour";
+	$column_date_type[14] = 14;
+	
+	$column[15] = "MATKA_TUNNIT"; 
+	$column_width[15] = $spiner_field_cell_width;
+	$column_cell_type[15] = "spinner_hour";
+	$column_date_type[15] = 15;
+	
+	$column[16] = "PAIVARAHA_OSA"; 
+	$column_width[16] = $checkbox_cell;
+	$column_cell_type[16] = "checkbox_first";
+	$column_date_type[16] = 16;
+	
+	$column[17] = "PAIVARAHA_KOKO";
+	$column_width[17] = $checkbox_cell;
+	$column_cell_type[17] = "checkbox_second";
+	$column_date_type[17] = 17;
+	
+	$column[18] = "ATERIA_KORVAUS"; 
+	$column_width[18] = $double_euro_cell;
+	$column_cell_type[18] = "double_kpl";
+	$column_date_type[18] = 18;
+	
+	$column[19] = "KM_KORVAUS"; 
+	$column_width[19] = $double_km_cell;
+	$column_cell_type[19] = "double_km";
+	$column_date_type[19] = 19;
+	
+	$column[20] = "TYOKALUKORVAUS"; 
+	$column_width[20] = $double_euro_cell;
+	$column_cell_type[20] = "double_euro";
+	$column_date_type[20] = 20;
+	
+	$column[21] = "KM_DESCRIPTION";
+	$column_width[21] = 200;
+	$column_cell_type[21] = "text_field";
+	$column_date_type[21] = 21;
+	
+	$column[22] = "HUOMIOIITA"; 
+	$column_width[22] = $text_field_cell;
+	$column_cell_type[22] = "text_field";
+	$column_date_type[22] = 22;
+	
+	$column[23] = "ACTION_ID"; 
+	$column_width[23] = 20;
+	$column_cell_type[23] = "id_field";
+	$column_date_type[23] = 23;
+	
+	$column[24] = "MEMO";
+	$column_width[24] = 200;
+	$column_cell_type[24] = "text_field";
+	$column_date_type[24] = 24;
+	
+	//$number_of_columns = $array_key;
+	
+	//echo count($column_cell_type);
+?>
+<?php
+
+//$i = 1;
+
+$indentifier[0] = "hour_status_id";
+$indentifier[1] = "project_id";
+$indentifier[2] = "action_date";
+$indentifier[3] = "action_time_start";
+$indentifier[4] = "action_time_end";
+$indentifier[5] = "NORMI_PAIVA";
+$indentifier[6] = "la";
+$indentifier[7] = "su";
+$indentifier[8] = "lisat_ilta";
+$indentifier[9] = "lisat_yo";
+$indentifier[10] = "ylityo_vrk_50";
+$indentifier[11] = "ylityo_vrk_100";
+$indentifier[12] = "ylityo_viik_50";
+$indentifier[13] = "ylityo_viik_100";
+$indentifier[14] = "ATV";
+$indentifier[15] = "matka_tunnit";
+$indentifier[16] = "paivaraha_osa";
+$indentifier[17] = "paivaraha_koko";
+$indentifier[18] = "ateria_korvaus";
+$indentifier[19] = "km_korvaus";
+$indentifier[20] = "tyokalu_korvaus";
+$indentifier[21] = "km_description";
+$indentifier[22] = "HUOMIOITA";
+$indentifier[23] = "action_id";
+$indentifier[24] = "memo";
+
+?>
+<script type="text/javascript">
+
+function returnerrors() {
+	$( "#dialog-form" ).dialog( "open" );
+}
+
+function acceptAll() {
+	          <?php
+			  
+			  $i = 1;
+		      $ii = 0;
+		       
+		      while ($i<=$number_of_rows) {
+			     echo "$(\"#hour_status_id_".$ii."\").val('2');\n";
+				 $i++;
+	             $ii++;
+			  }
+			  
+			  ?>
+			  
+			  var data = $('#timesheet_table_main_id').serialize();
+			  
+			  <?php
+
+			  $i = 1;
+		      $ii = 0;
+		       
+		       while ($i<=$number_of_rows) {
+	             
+	             foreach ($indentifier as $key => $value) { 
+	               
+                 if ($value=="hour_status_id") {
+
+	                  echo "var check_status_".$ii." = $('#".$value."_".$ii." option:selected').val();\n";
+	            
+		           }
+
+	             }
+	             
+	             $i++;
+	             $ii++;
+
+	           }
+	           
+	           $i = 1;
+	           $ii = 0;
+	           
+	           //$check_if = "";
+	           $check_if_not = "";
+	            
+	           while ($i<=$number_of_rows) {
+	           
+	           	foreach ($indentifier as $key => $value) {
+	           
+	           		if ($value=="hour_status_id") {
+	           
+	           			//echo "var check_status_".$ii." = $('#".$value."_".$ii." option:selected').val();\n";
+	           			
+	           			if ($i<$number_of_rows) {
+	           			
+	           			   $check_if_not .= "check_status_".$ii." == 1 ||\n";
+	           			   $check_if_not .= "check_status_".$ii." == 3 ||\n";
+	           			
+	           			} else {
+
+                           $check_if_not .= "check_status_".$ii." == 1 ||\n";
+                           $check_if_not .= "check_status_".$ii." == 3";
+                         
+                      }
+	           			 
+	           		}
+	           
+	           	}
+	           
+	           	$i++;
+	           	$ii++;
+	           
+	           }
+	           
+	         ?>
+
+	         if (<?php echo  $check_if_not; ?>) {
+	        	    alert('<?= $this->hour_status_missing_not_can ?>'); 
+             } else {
+
+	$.post("/zf/public/timesheetscrm/json/posttimesheet?timesheet_id=<?= $this->timesheet_id ?>&return=false", data).success(function(data) {
+
+		var json = JSON.parse(data);
+		if (json.success==false) {
+			alert( json.msg );
+		} else {
+            document.location = "/zf/public/timesheetscrm/index/senttohrm?timesheet_id=<?= $this->timesheet_id ?>&project_ids=<?= $this->project_url ?>";
+		}
+		
+	}).fail(function() {
+		alert( "Oops..." );
+	});
+
+    }
+			  
+}
+
+function sent() {
+	
+	var data = $('#timesheet_table_main_id').serialize();
+
+	<?php
+
+			  $i = 1;
+		      $ii = 0;
+		       
+		       while ($i<=$number_of_rows) {
+	             
+	             foreach ($indentifier as $key => $value) { 
+	               
+                 if ($value=="hour_status_id") {
+
+	                  echo "var check_status_".$ii." = $('#".$value."_".$ii." option:selected').val();\n";
+	            
+		           }
+
+	             }
+	             
+	             $i++;
+	             $ii++;
+
+	           }
+	           
+	           $i = 1;
+	           $ii = 0;
+	           
+	           //$check_if = "";
+	           $check_if_not = "";
+	            
+	           while ($i<=$number_of_rows) {
+	           
+	           	foreach ($indentifier as $key => $value) {
+	           
+	           		if ($value=="hour_status_id") {
+	           
+	           			//echo "var check_status_".$ii." = $('#".$value."_".$ii." option:selected').val();\n";
+	           			
+	           			if ($i<$number_of_rows) {
+	           			
+	           			   $check_if_not .= "check_status_".$ii." == 1 ||\n";
+	           			   $check_if_not .= "check_status_".$ii." == 3 ||\n";
+	           			
+	           			} else {
+
+                           $check_if_not .= "check_status_".$ii." == 1 ||\n";
+                           $check_if_not .= "check_status_".$ii." == 3";
+                         
+                      }
+	           			 
+	           		}
+	           
+	           	}
+	           
+	           	$i++;
+	           	$ii++;
+	           
+	           }
+	           
+	         ?>
+
+	         if (<?php echo  $check_if_not; ?>) {
+	        	    alert('<?= $this->hour_status_missing_not_can ?>'); 
+             } else {
+
+	$.post("/zf/public/timesheetscrm/json/posttimesheet?timesheet_id=<?= $this->timesheet_id ?>&return=false", data).success(function(data) {
+
+		var json = JSON.parse(data);
+		if (json.success==false) {
+			alert( json.msg );
+		} else {
+            document.location = "/zf/public/timesheetscrm/index/senttohrm?timesheet_id=<?= $this->timesheet_id ?>&project_ids=<?= $this->project_url ?>";
+		}
+		
+	}).fail(function() {
+		alert( "Oops..." );
+	});
+
+    }
+}
+
+function emptyToZero(value) {
+    if (value=="") {
+    return 0;
+    } else {
+	return value;
+    }
+}
+
+function timeStringToFloat(time) {
+    if (time=="") {
+	return parseFloat("0.00");
+	} else {
+	return parseFloat(time);
+	}
+}
+
+function toHHMMSS(value) {
+    var sec_num = parseInt(value, 10); // don't forget the second param
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    var time    = hours+':'+minutes;
+    return time;
+}
+
+function truefalseToInteger(value) {
+	/*var input = value;
+	var output = 0;
+    if (value=="true") {output=1;} else {output=0;}
+    return output;*/
+	var output = 0;
+	if($("#"+value).attr('checked')) {
+	    //$("#txtAge").show();
+		output = 1;
+	} else {
+	    //$("#txtAge").hide();
+		output = 0;
+	}
+	return output;
+}
+
+function currencyToFloat(value) {
+	
+	//Globalize.culture("de-DE");
+	var result = value;
+	
+	if (result=="") {
+		result = parseFloat("0.00");
+	} else {
+		result = parseFloat(value);
+	}
+	
+	return result;
+}
+
+
+    /*$(function() {
+	  enable_cb();
+	  $("#paivaraha_koko_0").click(enable_cb);
+	});
+
+	function enable_cb() {
+	  if (this.checked) {
+	    $("#paivaraha_koko_0").removeAttr("disabled");
+	  } else {
+	    $("#paivaraha_osa_0").attr("disabled", true);
+	  }
+     }*/
+
+/*function clickKoko(value) {
+	$("#paivaraha_koko_"+value).click({
+		alert ("#paivaraha_koko_" + value + "clicked!");
+	});
+}
+
+function clickOsa(value) {
+	$("#paivaraha_osa_"+value).click({
+		alert ("#paivaraha_osa_" + value + "clicked!");
+	});
+}*/
+
+/*function disable_cb_osa(value) {
+	  if ($('#paivaraha_koko_'+value).attr('checked')) {
+	    $("#paivaraha_osa_"+value).removeAttr("disabled");
+	  } else {
+	    $("#paivaraha_osa_"+value).attr("disabled", true);
+	  }
+}*/
+
+/*function enabele_cb_osa(value) {
+	  if ($('#paivaraha_koko_'+value).attr('checked')) {
+	    $("#paivaraha_osa_"+value).removeAttr("disabled");
+	  } else {
+	    $("#paivaraha_osa_"+value).attr("disabled", true);
+	  }
+}*/
+
+function checkKoko(value) {
+	if($('#paivaraha_koko_'+value).attr('checked')) {
+		$("#paivaraha_osa_"+value).attr("disabled", true);
+	} else {
+		$("#paivaraha_osa_"+value).removeAttr("disabled");
+	}
+}
+
+function checkOsa(value) {
+	if($('#paivaraha_osa_'+value).attr('checked')) {
+		$("#paivaraha_koko_"+value).attr("disabled", true);
+	} else {
+		$("#paivaraha_koko_"+value).removeAttr("disabled");
+	}
+}
+
+/*function checkKokoChecked(value) {
+	/*if($('#paivaraha_koko_'+value).attr('checked') && $("#paivaraha_osa_"+value).attr("disabled", true)) {
+		//$("#paivaraha_osa_"+value).removeAttr("disabled");
+		//$("#paivaraha_osa_"+value).removeAttr("checked");
+		$("#paivaraha_osa_"+value).attr("disabled", true);
+	} else if ($("#paivaraha_koko_"+value).attr("checked", false) && $("#paivaraha_osa_"+value).attr("checked", false) && $("#paivaraha_osa_"+value).attr("disabled", false) && $("#paivaraha_koko_"+value).attr("disabled", false)) {
+		$("#paivaraha_osa_"+value).attr("disabled", true);
+	} else {
+		//$("#paivaraha_osa_"+value).attr("disabled", true);
+		$("#paivaraha_osa_"+value).removeAttr("disabled");
+	}
+}
+
+function checkOsaChecked(value) {
+	/*if($('#paivaraha_osa_'+value).attr('checked') && $("#paivaraha_koko_"+value).attr("disabled", true)) {
+		$("#paivaraha_koko_"+value).removeAttr("disabled");
+		//$("#paivaraha_koko_"+value).removeAttr("checked");
+	} else if ($("#paivaraha_koko_"+value).attr("checked", false) && $("#paivaraha_osa_"+value).attr("checked", false) && $("#paivaraha_osa_"+value).attr("disabled", false) && $("#paivaraha_koko_"+value).attr("disabled", false)) {
+		$("#paivaraha_koko_"+value).attr("disabled", true);
+	} else {
+		//$("#paivaraha_koko_"+value).attr("disabled", true);
+		//$("#paivaraha_osa_"+value).removeAttr("checked");
+		$("#paivaraha_koko_"+value).removeAttr("disabled");
+	}
+}
+*/
+
+$( document ).ready(function() {
+
+	$(function() {
+
+		$( "#dialog-form" ).dialog({
+			autoOpen: false,
+			height: 300,
+			width: 350,
+			modal: true,
+			buttons: {
+			"Palauta": function() {
+
+	              <?php
+
+				  $i = 1;
+			      $ii = 0;
+			       
+			       while ($i<=$number_of_rows) {
+		             
+		             foreach ($indentifier as $key => $value) { 
+		               
+	                   if ($value=="hour_status_id") {
+
+		                  echo "var check_status_".$ii." = $('#".$value."_".$ii." option:selected').val();\n";
+		            
+			           } else if ($value=="memo") {
+			           	
+	                      echo "var check_memo_".$ii." = document.getElementById('".$value."_".$ii."').value\n";
+	                      //echo "alert(chech_memo_".$ii.");";
+			           }
+
+		             }
+		             
+		             $i++;
+		             $ii++;
+
+		           }
+		           
+		           $i = 1;
+		           $ii = 0;
+		           
+		           $check_if = "";
+		           $check_if_not = "";
+		           $check_if_not_all = "";
+		            
+		           while ($i<=$number_of_rows) {
+		           
+		           	foreach ($indentifier as $key => $value) {
+		           
+		           		if ($value=="hour_status_id") {
+		           
+		           			//echo "var check_status_".$ii." = $('#".$value."_".$ii." option:selected').val();\n";
+		           			
+		           			$check_if .= "check_status_".$ii." == 3 &&\n";
+		           			
+		           			if ($i<$number_of_rows) {
+		           			
+		           			   $check_if_not .= "check_status_".$ii." == 1 ||\n";
+		           			
+		           			} else {
+
+                               $check_if_not .= "check_status_".$ii." == 1";
+                               
+                            }
+                            
+                            if ($i<$number_of_rows) {
+                            
+                               $check_if_not_all .= "check_status_".$ii." == 2 &&\n";
+		
+		                    } else {
+		                    	
+                               $check_if_not_all .= "check_status_".$ii." == 2";
+                               
+		                    }
+		           			 
+		           		} else if ($value=="memo") {
+		           
+		           			//echo "var chech_memo_".$ii." = document.getElementById('".$value."_".$ii."').value;\n";
+		           			
+		           			if ($i<$number_of_rows) {
+		           			
+		           			   $check_if .= "check_memo_".$ii." == '' ||\n";
+		           			
+		           			} else {
+		           				
+	                           $check_if .= "check_memo_".$ii." == ''";
+		           			}
+		           		}
+		           
+		           	}
+		           
+		           	$i++;
+		           	$ii++;
+		           
+		           }
+		           
+		           echo "if (".$check_if.") { alert('"; ?>
+                   <?= $this->memo_missing ?>
+		           <?php echo "');"; ?> 
+
+		           } else if (<?php echo  $check_if_not; ?>) {
+		        	    alert('<?= $this->hour_status_missing ?>');
+		           } else if (<?php echo  $check_if_not_all; ?>) {
+		        	   alert('<?= $this->hour_status_missing_not_can_all ?>');
+                   } else {
+
+
+				var data = $('#timesheet_table_main_id').serialize();
+				$.post("/zf/public/timesheetscrm/json/posttimesheet?timesheet_id=<?= $this->timesheet_id ?>&return=true", data).success(function(data) {
+
+					var json = JSON.parse(data);
+					if (json.success==false) {
+						alert( json.msg );
+					} else {
+						document.forms["return-form"].submit();
+					}
+					
+				}).fail(function() {
+					alert( "Oops..." );
+				});
+
+		        }
+			},
+			"Peruuta": function() {
+			$( this ).dialog( "close" );
+			}
+			},
+			close: function() {
+			//allFields.val( "" ).removeClass( "ui-state-error" );
+			}
+	});
+
+	});
+	
+	 <?php
+	 
+	        $sum_of_hours = "var sum_norm = ";
+     				
+     		$i = 1;
+     		$ii = 0;
+
+     		//$javascript_sum_function[$i][0] = "";
+
+     		while ($i<=$number_of_rows) {
+     			
+     			$a = 0;
+     			
+     			foreach ($indentifier as $key => $value) {
+     				
+     				if ($value == "NORMI_PAIVA") {
+
+     		?>
+
+     		//var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('empty_<?php echo $ii; ?>').value);
+     		var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('empty_<?php echo $ii; ?>').value);
+
+     		<?php
+     					
+     				    //if ($a==0) {
+     				    
+     				    //}
+     				
+     				    //$a++;
+     				
+     			        if ($i<$number_of_rows) {
+     			           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+     			        } else {
+     			           $sum_of_hours .= "sum_".$value."_".$ii.";";
+     			        }   
+     				
+     				}
+     				
+     			}
+
+     		$i++;
+     		$ii++;
+
+     		}
+
+     		echo "".$sum_of_hours."";
+
+     		$ii--;
+
+     		?>
+     			        
+	
+<?php
+		
+$sum_of_hours = "var sum_la = ";
+		
+$i = 1;
+$ii = 0;
+
+//$javascript_sum_function[$i][0] = "";
+
+while ($i<=$number_of_rows) {
+	
+	$a = 0;
+	
+	foreach ($indentifier as $key => $value) {
+		
+		if ($value == "la") {
+
+?>
+
+//var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+
+<?php
+			
+		    //if ($a==0) {
+		    
+		    //}
+		
+		    //$a++;
+		
+	        if ($i<$number_of_rows) {
+	           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+	        } else {
+	           $sum_of_hours .= "sum_".$value."_".$ii.";";
+	        }   
+		
+		}
+		
+	}
+
+$i++;
+$ii++;
+
+}
+
+echo "".$sum_of_hours."";
+
+$ii--;
+
+?>
+	        
+<?php
+		
+		$sum_of_hours = "var sum_su = ";
+		
+$i = 1;
+$ii = 0;
+
+//$javascript_sum_function[$i][0] = "";
+
+while ($i<=$number_of_rows) {
+	
+	$a = 0;
+	
+	foreach ($indentifier as $key => $value) {
+		
+		if ($value == "su") {
+
+?>
+
+//var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+
+<?php
+			
+		    //if ($a==0) {
+    
+    //}
+
+    //$a++;
+
+    if ($i<$number_of_rows) {
+       $sum_of_hours .= "sum_".$value."_".$ii." + ";
+    } else {
+       $sum_of_hours .= "sum_".$value."_".$ii.";";
+	        }   
+		
+		}
+		
+	}
+
+$i++;
+$ii++;
+
+}
+
+echo "".$sum_of_hours."";
+
+$ii--;
+
+?>      
+	        <?php
+	        		
+	        		$sum_of_hours = "var sum_ilta = ";
+    				
+    		$i = 1;
+    		$ii = 0;
+
+    		//$javascript_sum_function[$i][0] = "";
+
+    		while ($i<=$number_of_rows) {
+    			
+    			$a = 0;
+    			
+    			foreach ($indentifier as $key => $value) {
+    				
+    				if ($value == "lisat_ilta") {
+
+    		?>
+
+    		//var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+    		var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+
+    		<?php
+    					
+    				    //if ($a==0) {
+    				    
+    				    //}
+    				
+    				    //$a++;
+    				
+    			        if ($i<$number_of_rows) {
+    			           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+    			        } else {
+    			           $sum_of_hours .= "sum_".$value."_".$ii.";";
+    			        }   
+    				
+    				}
+    				
+    			}
+
+    		$i++;
+    		$ii++;
+
+    		}
+
+    		echo "".$sum_of_hours."";
+
+    		$ii--;
+
+    		?>
+    			        <?php
+    			        		
+    			        		$sum_of_hours = "var sum_yo = ";
+    			        				
+    			        		$i = 1;
+    			        		$ii = 0;
+
+    			        		//$javascript_sum_function[$i][0] = "";
+
+    			        		while ($i<=$number_of_rows) {
+    			        			
+    			        			$a = 0;
+    			        			
+    			        			foreach ($indentifier as $key => $value) {
+    			        				
+    			        				if ($value == "lisat_yo") {
+
+    			        		?>
+
+    			        		//var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+    			        		var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+
+    			        		<?php
+    			        					
+    			        				    //if ($a==0) {
+    			        				    
+    			        				    //}
+    			        				
+    			        				    //$a++;
+    			        				
+    			        			        if ($i<$number_of_rows) {
+    			        			           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+    			        			        } else {
+    			        			           $sum_of_hours .= "sum_".$value."_".$ii.";";
+    			        			        }   
+    			        				
+    			        				}
+    			        				
+    			        			}
+
+    			        		$i++;
+    			        		$ii++;
+
+    			        		}
+
+    			        		echo "".$sum_of_hours."";
+
+    			        		$ii--;
+
+    			        		?>
+    			        
+    			        <?php
+    			        		
+    			        		$sum_of_hours = "var sum_vrk_50 = ";
+    			        				
+    			        		$i = 1;
+    			        		$ii = 0;
+
+    			        		//$javascript_sum_function[$i][0] = "";
+
+    			        		while ($i<=$number_of_rows) {
+    			        			
+    			        			$a = 0;
+    			        			
+    			        			foreach ($indentifier as $key => $value) {
+    			        				
+    			        				if ($value == "ylityo_vrk_50") {
+
+    			        		?>
+
+    			        		//var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+    			        		var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+
+    			        		<?php
+    			        					
+    			        				    //if ($a==0) {
+    			        				    
+    			        				    //}
+    			        				
+    			        				    //$a++;
+    			        				
+    			        			        if ($i<$number_of_rows) {
+    			        			           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+    			        			        } else {
+    			        			           $sum_of_hours .= "sum_".$value."_".$ii.";";
+    			        			        }   
+    			        				
+    			        				}
+    			        				
+    			        			}
+
+    			        		$i++;
+    			        		$ii++;
+
+    			        		}
+
+    			        		echo "".$sum_of_hours."";
+
+    			        		$ii--;
+
+    			        		?>
+    			        			        
+    			        			        <?php
+    			        			        		
+    			        			        		$sum_of_hours = "var sum_vrk_100 = ";
+    			        			        				
+    			        			        		$i = 1;
+    			        			        		$ii = 0;
+
+    			        			        		//$javascript_sum_function[$i][0] = "";
+
+    			        			        		while ($i<=$number_of_rows) {
+    			        			        			
+    			        			        			$a = 0;
+    			        			        			
+    			        			        			foreach ($indentifier as $key => $value) {
+    			        			        				
+    			        			        				if ($value == "ylityo_vrk_100") {
+
+    			        			        		?>
+
+    			        			        		//var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+    			        			        		var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+
+    			        			        		<?php
+    			        			        					
+    			        			        				    //if ($a==0) {
+    			        			        				    
+    			        			        				    //}
+    			        			        				
+    			        			        				    //$a++;
+    			        			        				
+    			        			        			        if ($i<$number_of_rows) {
+    			        			        			           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+    			        			        			        } else {
+    			        			        			           $sum_of_hours .= "sum_".$value."_".$ii.";";
+    			        			        			        }   
+    			        			        				
+    			        			        				}
+    			        			        				
+    			        			        			}
+
+    			        			        		$i++;
+    			        			        		$ii++;
+
+    			        			        		}
+
+    			        			        		echo "".$sum_of_hours."";
+
+    			        			        		$ii--;
+
+    			        			        		?>
+    			        			        			        
+    			        			        			        <?php
+    			        			        			        		
+    			        			        			        		$sum_of_hours = "var sum_viik_50 = ";
+    			        			        			        				
+    			        			        			        		$i = 1;
+    			        			        			        		$ii = 0;
+
+    			        			        			        		//$javascript_sum_function[$i][0] = "";
+
+    			        			        			        		while ($i<=$number_of_rows) {
+    			        			        			        			
+    			        			        			        			$a = 0;
+    			        			        			        			
+    			        			        			        			foreach ($indentifier as $key => $value) {
+    			        			        			        				
+    			        			        			        				if ($value == "ylityo_viik_50") {
+
+    			        			        			        		?>
+
+    			        			        			        		//var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+    			        			        			        		var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+
+    			        			        			        		<?php
+    			        			        			        					
+    			        			        			        				    //if ($a==0) {
+    			        			        			        				    
+    			        			        			        				    //}
+    			        			        			        				
+    			        			        			        				    //$a++;
+    			        			        			        				
+    			        			        			        			        if ($i<$number_of_rows) {
+    			        			        			        			           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+    			        			        			        			        } else {
+    			        			        			        			           $sum_of_hours .= "sum_".$value."_".$ii.";";
+    			        			        			        			        }   
+    			        			        			        				
+    			        			        			        				}
+    			        			        			        				
+    			        			        			        			}
+
+    			        			        			        		$i++;
+    			        			        			        		$ii++;
+
+    			        			        			        		}
+
+    			        			        			        		echo "".$sum_of_hours."";
+
+    			        			        			        		$ii--;
+
+    			        			        			        		?>
+    			        			        			        			        
+    			        			        			        			        <?php
+    			        			        			        			        		
+    			        			        			        			        		$sum_of_hours = "var sum_viik_100 = ";
+    			        			        			        			        				
+    			        			        			        			        		$i = 1;
+    			        			        			        			        		$ii = 0;
+
+    			        			        			        			        		//$javascript_sum_function[$i][0] = "";
+
+    			        			        			        			        		while ($i<=$number_of_rows) {
+    			        			        			        			        			
+    			        			        			        			        			$a = 0;
+    			        			        			        			        			
+    			        			        			        			        			foreach ($indentifier as $key => $value) {
+    			        			        			        			        				
+    			        			        			        			        				if ($value == "ylityo_viik_100") {
+
+    			        			        			        			        		?>
+
+    			        			        			        			        		//var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+    			        			        			        			        		var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+
+    			        			        			        			        		<?php
+    			        			        			        			        					
+    			        			        			        			        				    //if ($a==0) {
+    			        			        			        			        				    
+    			        			        			        			        				    //}
+    			        			        			        			        				
+    			        			        			        			        				    //$a++;
+    			        			        			        			        				
+    			        			        			        			        			        if ($i<$number_of_rows) {
+    			        			        			        			        			           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+    			        			        			        			        			        } else {
+    			        			        			        			        			           $sum_of_hours .= "sum_".$value."_".$ii.";";
+    			        			        			        			        			        }   
+    			        			        			        			        				
+    			        			        			        			        				}
+    			        			        			        			        				
+    			        			        			        			        			}
+
+    			        			        			        			        		$i++;
+    			        			        			        			        		$ii++;
+
+    			        			        			        			        		}
+
+    			        			        			        			        		echo "".$sum_of_hours."";
+
+    			        			        			        			        		$ii--;
+
+    			        			        			        			        		?>
+   
+<?php
+		
+		$sum_of_hours = "var sum_ATV = ";
+			
+	$i = 1;
+	$ii = 0;
+
+	//$javascript_sum_function[$i][0] = "";
+
+	while ($i<=$number_of_rows) {
+		
+		$a = 0;
+		
+		foreach ($indentifier as $key => $value) {
+			
+			if ($value == "ATV") {
+
+	?>
+
+	//var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+	var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+
+	<?php
+				
+			    //if ($a==0) {
+			    
+			    //}
+			
+			    //$a++;
+			
+		        if ($i<$number_of_rows) {
+		           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+		        } else {
+		           $sum_of_hours .= "sum_".$value."_".$ii.";";
+		        }   
+			
+			}
+			
+		}
+
+	$i++;
+	$ii++;
+
+	}
+
+	echo "".$sum_of_hours."";
+
+	$ii--;
+
+	?>
+		        
+		        <?php
+		        		
+		        		$sum_of_hours = "var sum_MATKATUNNIT = ";
+		        				
+		        		$i = 1;
+		        		$ii = 0;
+
+		        		//$javascript_sum_function[$i][0] = "";
+
+		        		while ($i<=$number_of_rows) {
+		        			
+		        			$a = 0;
+		        			
+		        			foreach ($indentifier as $key => $value) {
+		        				
+		        				if ($value == "matka_tunnit") {
+
+		        		?>
+
+		        		//var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+		        		var <?php echo "sum_".$value."_".$ii ?> = timeStringToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+
+		        		<?php
+		        					
+		        				    //if ($a==0) {
+		        				    
+		        				    //}
+		        				
+		        				    //$a++;
+		        				
+		        			        if ($i<$number_of_rows) {
+		        			           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+		        			        } else {
+		        			           $sum_of_hours .= "sum_".$value."_".$ii.";";
+		        			        }   
+		        				
+		        				}
+		        				
+		        			}
+
+		        		$i++;
+		        		$ii++;
+
+		        		}
+
+		        		echo "".$sum_of_hours."";
+
+		        		$ii--;
+
+		        		?>
+<?php
+		
+		$sum_of_hours = "var sum_osa = ";
+				
+		$i = 1;
+		$ii = 0;
+
+		//$javascript_sum_function[$i][0] = "";
+
+		while ($i<=$number_of_rows) {
+			
+			$a = 0;
+			
+			foreach ($indentifier as $key => $value) {
+				
+				if ($value == "paivaraha_osa") {
+
+		?>
+
+		        			           /*$(function() {
+		        				          checkOsa(<?php echo $ii; ?>);
+		        				      	  //$("#paivaraha_osa_<?php echo $ii; ?>").click(checkOsaChecked(<?php echo $ii; ?>));
+		        				      	});*/
+		        			        
+		        			        //$("#paivaraha_osa_<?php echo $ii; ?>").click(function () {
+		        			          //alert("#paivaraha_osa_<?php echo $ii; ?>");
+		        			          //checkOsaChecked(<?php echo $ii; ?>);
+		        			        //});
+		        			        
+		        			        $("#paivaraha_osa_<?php echo $ii; ?>").click(function(){
+		        			            var group = "#paivaraha_koko_<?php echo $ii; ?>";
+		        			            $(group).attr("checked",false);
+		        			            $(this).attr("checked",true);
+		        			            //$( "#sum_osa" ).html(sum_osa);
+		        			        });
+		        			        
+		 var <?php echo "sum_".$value."_".$ii ?> = truefalseToInteger('<?php echo $value ?>_<?php echo $ii; ?>');
+
+        //alert(truefalseToInteger('<?php echo $value ?>_<?php echo $ii; ?>'));
+
+		<?php
+					
+				    //if ($a==0) {
+				    
+				    //}
+				
+				    //$a++;
+				
+			        if ($i<$number_of_rows) {
+			           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+			        } else {
+			           $sum_of_hours .= "sum_".$value."_".$ii.";";
+			        }   
+				
+				}
+				
+			}
+
+		$i++;
+		$ii++;
+
+		}
+
+		echo "".$sum_of_hours."";
+
+		$ii--;
+
+		?>
+			        
+        <?php
+        		
+        		$sum_of_hours = "var sum_koko = ";
+        				
+        		$i = 1;
+        		$ii = 0;
+
+        		//$javascript_sum_function[$i][0] = "";
+
+        		while ($i<=$number_of_rows) {
+        			
+        			$a = 0;
+        			
+        			foreach ($indentifier as $key => $value) {
+        				
+        				if ($value == "paivaraha_koko") {
+
+        		?>
+                
+			    //checkKoko(<?php echo $ii; ?>);
+			        
+			        //$("#paivaraha_koko_<?php echo $ii; ?>").click();
+			        
+			        /*$(function() {
+			          checkKoko(<?php echo $ii; ?>);
+			      	  //$("#paivaraha_koko_<?php echo $ii; ?>").click(checkKokoChecked(<?php echo $ii; ?>));
+			      	});*/
+			        
+			        //$("#paivaraha_koko_<?php echo $ii; ?>").click(function () {
+  			          //alert("#paivaraha_koko_<?php echo $ii; ?>");
+  			          //checkKokoChecked(<?php echo $ii; ?>);
+  			        //});
+			        
+			        $("#paivaraha_koko_<?php echo $ii; ?>").click(function(){
+			            var group = "#paivaraha_osa_<?php echo $ii; ?>";
+			            $(group).attr("checked",false);
+			            $(this).attr("checked",true);
+			            //$( "#sum_koko" ).html(sum_koko);
+			        });
+        		
+			    var <?php echo "sum_".$value."_".$ii ?> = truefalseToInteger('<?php echo $value ?>_<?php echo $ii; ?>');
+
+                //alert(truefalseToInteger('<?php echo $value ?>_<?php echo $ii; ?>'));
+
+        		<?php
+        					
+        				    //if ($a==0) {
+        				    
+        				    //}
+        				
+        				    //$a++;
+        				
+        			        if ($i<$number_of_rows) {
+        			           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+        			        } else {
+        			           $sum_of_hours .= "sum_".$value."_".$ii.";";
+        			        }   
+        				
+        				}
+        				
+        			}
+
+        		$i++;
+        		$ii++;
+
+        		}
+
+        		echo "".$sum_of_hours."";
+
+        		$ii--;
+
+        		?>
+        			        <?php
+        			        		
+        			        		$sum_of_hours = "var sum_atriakorvaus = ";
+        			        				
+        			        		$i = 1;
+        			        		$ii = 0;
+
+        			        		//$javascript_sum_function[$i][0] = "";
+
+        			        		while ($i<=$number_of_rows) {
+        			        			
+        			        			$a = 0;
+        			        			
+        			        			foreach ($indentifier as $key => $value) {
+        			        				
+        			        				if ($value == "ateria_korvaus") {
+
+        			        		?>
+
+        			        		var <?php echo "sum_".$value."_".$ii ?> = parseFloat(emptyToZero(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value));
+
+        			                //alert(<?php echo "sum_".$value."_".$ii ?>);
+
+        			        		<?php
+        			        					
+        			        				    //if ($a==0) {
+        			        				    
+        			        				    //}
+        			        				
+        			        				    //$a++;
+        			        				
+        			        			        if ($i<$number_of_rows) {
+        			        			           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+        			        			        } else {
+        			        			           $sum_of_hours .= "sum_".$value."_".$ii.";";
+        			        			        }   
+        			        				
+        			        				}
+        			        				
+        			        			}
+
+        			        		$i++;
+        			        		$ii++;
+
+        			        		}
+
+        			        		echo "".$sum_of_hours."";
+
+        			        		$ii--;
+
+        			        		?>
+        			        			        <?php
+        			        			        		
+        			        			        		$sum_of_hours = "var sum_km_korvaus = ";
+        			        			        				
+        			        			        		$i = 1;
+        			        			        		$ii = 0;
+
+        			        			        		//$javascript_sum_function[$i][0] = "";
+
+        			        			        		while ($i<=$number_of_rows) {
+        			        			        			
+        			        			        			$a = 0;
+        			        			        			
+        			        			        			foreach ($indentifier as $key => $value) {
+        			        			        				
+        			        			        				if ($value == "km_korvaus") {
+
+        			        			        		?>
+
+        			        			        		var <?php echo "sum_".$value."_".$ii ?> = parseInt(emptyToZero(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value)); //parseInt(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+
+        			        			                //alert(<?php echo "sum_".$value."_".$ii ?>);
+
+        			        			        		<?php
+        			        			        					
+        			        			        				    //if ($a==0) {
+        			        			        				    
+        			        			        				    //}
+        			        			        				
+        			        			        				    //$a++;
+        			        			        				
+        			        			        			        if ($i<$number_of_rows) {
+        			        			        			           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+        			        			        			        } else {
+        			        			        			           $sum_of_hours .= "sum_".$value."_".$ii.";";
+        			        			        			        }   
+        			        			        				
+        			        			        				}
+        			        			        				
+        			        			        			}
+
+        			        			        		$i++;
+        			        			        		$ii++;
+
+        			        			        		}
+
+        			        			        		echo "".$sum_of_hours."";
+
+        			        			        		$ii--;
+
+        			        			        		?>
+        			        			        			        
+        			        			        			        <?php
+        			        			        			        		
+        			        			        			        		$sum_of_hours = "var sum_tyokalukorvaus = ";
+        			        			        			        				
+        			        			        			        		$i = 1;
+        			        			        			        		$ii = 0;
+
+        			        			        			        		//$javascript_sum_function[$i][0] = "";
+
+        			        			        			        		while ($i<=$number_of_rows) {
+        			        			        			        			
+        			        			        			        			$a = 0;
+        			        			        			        			
+        			        			        			        			foreach ($indentifier as $key => $value) {
+        			        			        			        				
+        			        			        			        				if ($value == "tyokalu_korvaus") {
+
+        			        			        			        		?>
+
+        			        			        			        		var <?php echo "sum_".$value."_".$ii ?> = currencyToFloat(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value); //parseInt(document.getElementById('<?php echo $value ?>_<?php echo $ii; ?>').value);
+
+        			        			        			                //alert(<?php echo "sum_".$value."_".$ii ?>);
+
+        			        			        			        		<?php
+        			        			        			        					
+        			        			        			        				    //if ($a==0) {
+        			        			        			        				    
+        			        			        			        				    //}
+        			        			        			        				
+        			        			        			        				    //$a++;
+        			        			        			        				
+        			        			        			        			        if ($i<$number_of_rows) {
+        			        			        			        			           $sum_of_hours .= "sum_".$value."_".$ii." + ";
+        			        			        			        			        } else {
+        			        			        			        			           $sum_of_hours .= "sum_".$value."_".$ii.";";
+        			        			        			        			        }   
+        			        			        			        				
+        			        			        			        				}
+        			        			        			        				
+        			        			        			        			}
+
+        			        			        			        		$i++;
+        			        			        			        		$ii++;
+
+        			        			        			        		}
+
+        			        			        			        		echo "".$sum_of_hours."";
+
+        			        			        			        		$ii--;
+
+        			        			        			        		?>
+	        
+	        $( "#sum_NORMI_PAIVA" ).html(toHHMMSS(sum_norm * 3600));
+	        $( "#sum_la" ).html(toHHMMSS(sum_la * 3600));
+	        $( "#sum_su" ).html(toHHMMSS(sum_su * 3600));
+	        $( "#sum_ilta" ).html(toHHMMSS(sum_ilta * 3600));
+	        $( "#sum_yo" ).html(toHHMMSS(sum_yo * 3600));
+	        $( "#sum_vrk_50" ).html(toHHMMSS(sum_vrk_50 * 3600));
+	        $( "#sum_vrk_100" ).html(toHHMMSS(sum_vrk_100 * 3600));
+	        $( "#sum_viik_50" ).html(toHHMMSS(sum_viik_50 * 3600));
+	        $( "#sum_viik_100" ).html(toHHMMSS(sum_viik_100 * 3600));
+	        $( "#sum_ATV" ).html(toHHMMSS(sum_ATV * 3600));
+	        $( "#sum_MATKA_TUNNIT" ).html(toHHMMSS(sum_MATKATUNNIT * 3600));
+	        $( "#sum_osa" ).html(sum_osa);
+	        $( "#sum_koko" ).html(sum_koko);
+	        $( "#sum_ATERIA_KORVAUS" ).html(sum_atriakorvaus);
+	        $( "#sum_km_korvaus" ).html(sum_km_korvaus + " km");
+	        $( "#sum_tyokalukorvaus" ).html(sum_tyokalukorvaus.toFixed(2) + ' &euro;');
+
+	        if (toHHMMSS(sum_norm * 3600)=="00:00") {
+	        	$(function() {
+	        		$('.norm-column').hide();
+	        	});
+			} 
+
+			if (toHHMMSS(sum_la * 3600)=="00:00") {
+				$(function() {
+	        		$('.la-column').hide();
+	        	});
+		    }
+
+		    if (toHHMMSS(sum_su * 3600)=="00:00") {
+				$(function() {
+	        		$('.su-column').hide();
+	        	});
+		    }
+
+		    if (toHHMMSS(sum_ilta * 3600)=="00:00"
+			    && toHHMMSS(sum_yo * 3600)=="00:00") {
+				$(function() {
+	        		$('.extras-column').hide();
+	        	});
+		    }
+
+		    if (toHHMMSS(sum_vrk_50 * 3600)=="00:00"
+			    && toHHMMSS(sum_vrk_100 * 3600)=="00:00"
+			    && toHHMMSS(sum_viik_50 * 3600)=="00:00"
+			    && toHHMMSS(sum_viik_100 * 3600)=="00:00") {
+				$(function() {
+	        		$('.over-column').hide();
+	        	});
+		    }
+
+		    if (toHHMMSS(sum_ATV * 3600)=="00:00") {
+				$(function() {
+	        		$('.atv-column').hide();
+	        	});
+		    }
+
+		    if (toHHMMSS(sum_MATKATUNNIT * 3600)=="00:00") {
+				$(function() {
+	        		$('.matkat-column').hide();
+	        	});
+		    }
+
+		    if (sum_osa=="0"
+			    && sum_koko=="0") {
+				$(function() {
+	        		$('.rahat-column').hide();
+	        	});
+		    }
+
+		    if (sum_atriakorvaus=="0") {
+	        	$(function() {
+	        		$('.ateria-column').hide();
+	        	});
+			}
+
+		    if (sum_km_korvaus=="0") {
+	        	$(function() {
+	        		$('.km-column').hide();
+	        	});
+			}
+
+		    if (sum_tyokalukorvaus.toFixed(2)=="0.00") {
+	        	$(function() {
+	        		$('.tools-column').hide();
+	        	});
+			}
+	        
+	    });
+
+</script>
+</head>
+<body>
+<!-- Start -->
+
+<div id="dialog-form" title="Palauta">
+<p class="validateTips"></p>
+<form action="/zf/public/timesheetscrm/index/return?timesheet_id=<?= $this->timesheet_id ?>&project_ids=<?= $this->project_url ?>" id="return-form" method="post">
+<fieldset>
+<!--  
+<label for="memo">Memo</label>
+<textarea rows="2" cols="22" name="memo"></textarea>
+-->
+</fieldset>
+</form>
+</div>
+
+<form action="/zf/public/timesheetscrm/json/posttimesheet?timesheet_id=<?= $this->timesheet_id ?>" name="timesheet" style="width:100%;" id="timesheet_table_main_id" class="timesheet_table_main_class" method="post">
+<table width="100%">
+	<tr>
+		<td>
+		<table width="100%">
+			<tr>
+				<td align="center" width="200"><img
+					src="/zf/public/images/jarkeva-logo-musta.png" /> <br />
+				<br />
+				<h3>Ty&ouml;ntekij&auml;n tuntikortti</h3>
+				</td>
+				<td>
+				<table width="100%">
+					<tr>
+						<td>
+						<table width="100%">
+							<tr>
+								<td align="center" width="200">
+								<table class="employee_table">
+								    <tr>
+										<td align="right">Tuntikortin nimi</td>
+									</tr>
+									<tr>
+										<td align="right">Ty&ouml;ntekij&auml;</td>
+									</tr>
+									<tr>
+										<td align="right">Ammattinike</td>
+									</tr>
+								</table>
+								</td>
+								<td>
+								<table width="100%" class="employee_table_fields">
+								    <tr>
+										<td style="border-bottom: solid grey 1px"><div><?= $this->timesheet_name ?></div></td>
+									</tr>
+									<tr>
+										<td style="border-bottom: solid grey 1px"><div><?= $this->username ?></div></td>
+									</tr>
+									<tr>
+										<td style="border-bottom: solid grey 1px"><div><?= $this->job_title ?></div></td>
+									</tr>
+								</table>
+								</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+<table class="timesheet_table" cellspacing="0" cellpadding="0" border="0"  width="100%">
+	<tr>
+	    <td style="<?php echo $cell_border; ?>;" align="center" class="header_cell">Hyv&auml;ksy/<br />Hylk&auml;&auml;</td>
+	    <td style="<?php echo $cell_border; ?>;" align="center" class="header_cell">Kustannuspaikka ja/tai Projekti</td>
+	    <td style="<?php echo $cell_border; ?>;" align="center" class="header_cell">PVM</td>
+		<td style="<?php echo $cell_border; ?>;" align="center" class="header_cell" colspan="2">Klo</td>
+		<td style="display:none;"></td>
+		<td style="<?php echo $cell_border; ?>;" align="center" class="header_cell norm-column">norm.</td>
+		<td style="<?php echo $cell_border; ?>;" align="center" class="header_cell la-column">Lis&auml;t<br />la</td>
+		<td style="<?php echo $cell_border; ?>;" align="center" class="header_cell su-column">Lis&auml;t<br />su</td>
+		<td style="<?php echo $cell_border; ?>;" align="center" class="header_cell extras-column" colspan="2">
+		<table>
+			<tr>
+				<td colspan="2" align="center">Lis&auml;t</td>
+			</tr>
+			<tr>
+				<td align="center" width="<?php echo $spiner_field_double_cell_width; ?>">Ilta</td>
+				<td align="center" width="<?php echo $spiner_field_double_cell_width; ?>">Y&ouml;</td>
+			</tr>
+		</table>
+		</td>
+		<td style="<?php echo $cell_border; ?>" align="center" class="header_cell over-column" colspan="4" width="<?php echo $spiner_field_quad_width; ?>">
+		<table width="100%" border="0">
+			<tr>
+				<tr>
+					<td colspan="4" align="center">Ylity&ouml;</td>
+				</tr>
+				<tr>
+					<td align="center" width="25%">vrk 50 %</td>
+					<td align="center" width="25%">vrk 100 %</td>
+					<td align="center" width="25%">vko 50 %</td>
+					<td align="center" width="25%">vko 100 %</td>
+				</tr>
+		</table>
+		</td>
+		<td style="<?php echo $cell_border; ?>" align="center" class="header_cell atv-column" width="<?php echo $double_euro; ?>">ATV</td>
+		<td style="<?php echo $cell_border; ?>" align="center" class="header_cell matkat-column" width="<?php echo $double_euro; ?>">
+		<table width="100%">
+			<tr>
+				<tr>
+					<td colspan="2" align="center">Matka-</td>
+				</tr>
+				<tr>
+					<td align="center">tunnit</td>
+				</tr>	
+		</table>
+		</td>
+		<td style="<?php echo $cell_border; ?>" align="center" class="header_cell rahat-column" colspan="2" width="<?php echo $checkbox; ?>">
+		<table width="100%">
+			<tr>
+				<tr>
+					<td colspan="2" align="center">P&auml;iv&auml;raha</td>
+				</tr>
+				<tr>
+					<td width="60" align="center">Osa</td>
+					<td width="60" align="center">Koko</td>
+				</tr>
+		
+		</table>
+		</td>
+		</td>
+		<td style="<?php echo $cell_border; ?>" align="center" class="header_cell ateria-column">
+		<table width="100%">
+			<tr>
+				<tr>
+					<td colspan="2" align="center">Ateria-</td>
+				</tr>
+				<tr>
+					<td align="center">korvaus</td>
+				</tr>
+		
+		</table>
+		</td>
+		<td style="<?php echo $cell_border; ?>" align="center" class="header_cell km-column">
+		<table width="100%">
+			<tr>
+				<tr>
+					<td colspan="2" align="center">Kilometri-</td>
+				</tr>
+				<tr>
+					<td align="center">korvaus(km)</td>
+				</tr>
+		
+		</table>
+		</td>
+		<td style="<?php echo $cell_border; ?>" align="center" class="header_cell tools-column" width="60">
+		<table width="100%">
+			<tr>
+				<tr>
+					<td colspan="2" align="center">Ty&ouml;kalu-</td>
+				</tr>
+				<tr>
+					<td align="center">korvaus</td>
+				</tr>
+		
+		</table>
+		</td>
+		<td style="<?php echo $cell_border; ?>;" align="center" class="header_cell">Kilometrikorvauksen<br />selite</td>
+		<td style="<?php echo $cell_border; ?>;" align="center" class="header_cell">HUOMIOITA</td>
+		<td style="display:none;">ID</td>
+		<td style="<?php echo $cell_border; ?>;border-right: 1px #CCCCCC solid;" align="center" class="header_cell">MEMO</td>
+	</tr>
+
+	<!-- <td colspan="<?php echo 14;?>"> -->
+	
+<?php //print_r($column); ?>
+	<!--  <table cellspacing="0" cellpadding="0" border="0" width="100%"> -->
+	<?php
+	$i = 1;
+	$ii = 0; 
+	while ($i<=$number_of_rows) {
+		if ($i==$number_of_rows) {
+			$style_extra = "border-bottom: 1px #cccccc solid;";
+		}
+	?>
+	<tr>
+		
+	    <?php foreach ($column as $key => $value) { 
+		if ($column[$key]=="HUOMIOIITA") {
+		?>
+        <td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="left" class="input_cell">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<!--  <input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:100%;" disabled /> -->
+		<?= $this->{$content} ?>
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="ACTION_ID") {
+		?>
+		<td style="display:none;" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo "action_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="NORMIPAIVA") {
+		?>
+		<td style="display:none;"><input name="<?php echo "empty_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?php echo "06:00:00"; ?>" style="width:<?php echo 60; ?>px;" disabled /></td>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell norm-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo "empty_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="PVM") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="PROJECT_ID") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="HOUR_STATUS_ID") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<select name="<?php echo $indentifier[$key]."_".$ii; ?>" id="<?php echo $indentifier[$key]."_".$ii; ?>" style="width:<?php echo $column_width[$key]; ?>px;"><?= $this->{$content} ?></select>
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="KM_DESCRIPTION") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="left" width="<?php echo $column_width[$key]; ?>" class="input_cell">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<!--  <input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:100%;" disabled /> -->
+		<?= $this->{$content} ?>
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="MEMO") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>border-right: 1px #CCCCCC solid;" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:100%;" />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="KLO_START") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="KLO_END") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="LA") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell la-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="SU") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell su-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="LISAT_ILTA") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell extras-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="LISAT_YO") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell extras-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="YLITYO_VRK_50") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell over-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="YLITYO_VRK_100") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell over-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="YLITYO_VEK_50") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell over-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="YLITYO_VEK_100") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell over-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="ATV") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell atv-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="MATKA_TUNNIT") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell matkat-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled/>
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="PAIVARAHA_OSA") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell rahat-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="checkbox" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?php if ($this->{$content}) { ?><?= $this->{$content} ?><?php } else { echo "true"; } ?>" style="width:<?php echo $column_width[$key]; ?>px;" <?php if ($this->{$content}=="true") { echo "checked"; } ?> disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="PAIVARAHA_KOKO") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell rahat-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="checkbox" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?php if ($this->{$content}) { ?><?= $this->{$content} ?><?php } else { echo "true"; } ?>" style="width:<?php echo $column_width[$key]; ?>px;" <?php if ($this->{$content}=="true") { echo "checked"; } ?> disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="ATERIA_KORVAUS") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell ateria-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="KM_KORVAUS") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell km-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;" disabled />
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		} else if ($column[$key]=="TYOKALUKORVAUS") {
+		?>
+		<td style="<?php echo $cell_border; ?><?php echo $style_extra; ?>" align="center" width="<?php echo $column_width[$key]; ?>" class="input_cell tools-column">
+		<!-- <?php echo $indentifier[$key]; ?> -->
+		<?php $content = $indentifier[$key]."_".$ii; ?>
+		<input name="<?php echo $indentifier[$key]."_".$ii; ?>" type="text" id="<?php echo $indentifier[$key]."_".$ii; ?>" value="<?= $this->{$content} ?>" style="width:<?php echo $column_width[$key]; ?>px;"  disabled/>
+		<?php //echo $column[$key]; ?>
+		</td>
+		<?php
+		}
+		
+		} ?>
+	</tr>
+	<?php 
+	$i++;
+	$ii++;
+	} 
+	?>
+	<tr>
+	<td colspan="4" align="right">Yhteens&auml;<td>
+	<td align="right" style="display:none;"></td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid;" id="sum_NORMI_PAIVA" align="center" class="norm-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid;" id="sum_la" align="center" class="la-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid;" id="sum_su" align="center" class="su-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid;" id="sum_ilta" align="center" class="extras-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid;" id="sum_yo" align="center" class="extras-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid;" id="sum_vrk_50" align="center" class="over-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid;" id="sum_vrk_100" align="center" class="over-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid;" id="sum_viik_50" align="center" class="over-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid;" id="sum_viik_100" align="center" class="over-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid;" id="sum_ATV" align="center" class="atv-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid;" id="sum_MATKA_TUNNIT" align="center" class="matkat-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid;" id="sum_osa" align="center" class="rahat-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid;" id="sum_koko" align="center" class="rahat-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid" id="sum_ATERIA_KORVAUS" align="center" class="ateria-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid" id="sum_km_korvaus" align="center" class="km-column">-</td>
+	<td style="border-left:1px #cccccc solid; border-bottom: 1px #cccccc solid; border-right:1px #cccccc solid" id="sum_tyokalukorvaus" align="center" class="tools-column">-</td>
+	<td></td>
+	</tr>
+	<tr>
+	  <td colspan="4"></td>
+	  <td align="right" style="display:none;"></td>
+	  <td class="norm-column"></td>
+	  <td class="la-column"></td>
+	  <td class="su-column"></td>
+	  <td class="extras-column"></td>
+	  <td class="extras-column"></td>
+	  <td class="over-column"></td>
+	  <td class="over-column"></td>
+	  <td class="over-column"></td>
+	  <td class="over-column"></td>
+	  <td class="atv-column"></td>
+	  <td class="matkat-column"></td>
+	  <td class="rahat-column"></td>
+	  <td class="rahat-column"></td>
+	  <td class="ateria-column"></td>
+	  <td class="km-column"></td>
+	  <td class="tools-column"></td>
+	  <td align="right">Selite&nbsp;</td>
+	  <td style="border: 1px #000 solid;"><?= $this->km_description ?></td>
+	</tr>
+</table>
+</form>
+<br />
+<a href="#" onclick="returnerrors();">Palauta virheellisen&auml;</a> <a href="#" onclick="sent();">Hyv&auml;ksy</a> <a href="#" onclick="acceptAll();">Hyv&auml;ksy kaikki</a>
+<?php if ($this->memo == "") { ?>
+<?php } else { ?>
+<br /><br />Memo: <?= $this->memo ?>
+<?php } ?>
+<!-- End -->
+</body>
+</html>
+<?php } ?>

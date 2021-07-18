@@ -1,0 +1,34 @@
+Timesheetsfrm_Timesheetsfrm;Tuntikorttien kierrätys
+Timesheetsfrm_Euro;€
+Timesheetsfrm_Fullname;Nimi
+Timesheetsfrm_Username;Käyttäjän nimi
+Timesheetsfrm_Next;Seuraava käsittelijä
+Timesheetsfrm_Status;Status
+Timesheetsfrm_Agreeement_Id;Työsopimus
+Timesheetsfrm_Timesheet_Name;Selite
+Timesheetsfrm_Refresh;Lataa
+Timesheetsfrm_Refresh_Tooltip;Lataa tuntikortit tästä napista uudestaan
+Timesheetsfrm_Search;Etsi
+Timesheetsfrm_Page;Sivu
+Timesheetsfrm_No_Timesheets;Ei yhtään tuntikorttia
+Timesheetsfrm_Edit_Timesheet;Tarkasta valittu tuntikortti
+Timesheetsfrm_Edit_Timesheet_Tooltip;Tarkasata valittu tuntikortti tästä napista
+Timesheetsfrm_Create_New;Lisää uusi tuntikortti
+Timesheetsfrm_Create_New_Tooltip;Lisää uusi tuntikortti tästä napista
+Timesheetsfrm_Agreement;Työsopimus
+Timesheetsfrm_Submit;Tallenna
+Timesheetsfrm_Close;Peruuta
+Timesheetsfrm_Sending;Tallentaa
+Timesheetsfrm_Success;Onnistui
+Timesheetsfrm_Error;Virhe
+Timesheetsfrm_Success_Text;Tuntikortin luonti onnistui
+Timesheetsfrm_Memo;Memo
+Timesheetsfrm_Order_Id;Tilausvahvistus
+Timesheetsfrm_Occupation;Ammattinimike
+Timesheetsfrm_Start_Date;Aloituspäivä
+Timesheetsfrm_Date_Completed;Lopetuspäivä
+Timesheetsfrm_Permanent;Toistaiseksi
+Timesheetsfrm_True;Kyllä
+Timesheetsfrm_False;Ei
+Timesheetsfrm_Date_Time_Created;Päivämäärä
+Timesheetsfrm_Description;Selite

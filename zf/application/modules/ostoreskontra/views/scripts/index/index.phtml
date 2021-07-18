@@ -1,0 +1,95 @@
+<?php if ($this->employeeview) { ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ostoseskontra</title>
+
+<link rel="stylesheet" type="text/css" href="/zf/public/ext/resources/css/ext-all.css" />
+<!-- <script type="text/javascript" src="/zf/public/js/jquery-1.10.1.min.js"></script> -->
+<script type="text/javascript" src="/zf/public/ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="/zf/public/ext/ext-all.js"></script>
+<script type="text/javascript" src="/zf/public/js/Ext.ux.util.js"></script>
+<script type="text/javascript" src="/zf/public/js/FileUploadField.js"></script>
+<script type="text/javascript" src="/zf/public/js/RowExpander.js"></script>
+<script type="text/javascript" src="/zf/public/js/Ext.ux.grid.Search.js"></script>
+<script type="text/javascript" src="/zf/public/js/LockingGridView.js"></script>
+<script type="text/javascript" src="/zf/public/js/Rahul.ux.EditableGridPanel.js"></script>
+<script type="text/javascript" src="/zf/public/js/GroupSummary.js"></script>
+<!--  <script type="text/javascript" src="/zf/public/js/Ext.ux.GridTotals.js"></script> -->
+<script type="text/javascript" src="/zf/public/js/miframe.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/zf/public/modules/access/css/default.css" />
+<?php if ($this->redirect) { ?>
+<script type="text/javascript" src="/zf/public/ostoreskontra/javascript/index?os_location=<?= $this->redirect ?>"></script>
+<?php } else { ?>
+<script type="text/javascript" src="/zf/public/ostoreskontra/javascript/index"></script>
+<?php } ?>
+
+<link rel="stylesheet" type="text/css" href="/zf/public/themes/x-theme-<?= $this->layout ?>/resources/css/xtheme-<?= $this->layout ?>.css">
+<link rel="stylesheet" type="text/css" href="/zf/public/css/LockingGridView.css" />
+<link rel="stylesheet" type="text/css" href="/zf/public/css/icons.css" />
+<link rel="stylesheet" type="text/css" href="/zf/public/css/fileuploadfield.css" />
+<link rel="stylesheet" type="text/css" href="/zf/public/css/GroupSummary.css" />
+<link rel="stylesheet" type="text/css" href="/zf/public/css/DragAndDrop.css" />
+<link rel="stylesheet" type="text/css" href="/zf/public/css/GridTotals.css" />
+</head>
+<body>
+<!-- Start -->
+<div id="ApplicationForm"></div>
+<!-- End -->
+</body>
+</html>
+<?php } else { ?>
+<?php if ($this->noinvoses) { ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ostoseskontra</title>
+</head>
+<body>
+<!-- Start -->
+<div id="ApplicationForm"><?= $this->invoicemessage ?></div>
+<!-- End -->
+</body>
+</html>
+<?php } else { ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ostoseskontra</title>
+<link rel="stylesheet" type="text/css" href="/zf/public/ext/resources/css/ext-all.css" />
+<script type="text/javascript" src="/zf/public/ext/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="/zf/public/ext/ext-all.js"></script>
+<script type="text/javascript" src="/zf/public/js/FileUploadField.js"></script>
+<script type="text/javascript" src="/zf/public/js/Ext.ux.recaptcha.js"></script>
+<script type="text/javascript" src="/zf/public/js/RowExpander.js"></script>
+<script type="text/javascript" src="/zf/public/js/Ext.ux.grid.Search.js"></script>
+<script type="text/javascript" src="/zf/public/js/LockingGridView.js"></script>
+<script type="text/javascript" src="/zf/public/js/GroupSummary.js"></script>
+<script type="text/javascript" src="/zf/public/js/Ext.ux.GridTotals.js"></script>
+<script type="text/javascript" src="/zf/public/js/miframe.js"></script>
+
+<?php if ($this->redirect) { ?>
+<script type="text/javascript" src="/zf/public/ostoreskontra/javascript/employee?os_location=<?= $this->redirect ?>"></script>
+<?php } else { ?>
+<script type="text/javascript" src="/zf/public/ostoreskontra/javascript/employee"></script>
+<?php } ?>
+<link rel="stylesheet" type="text/css" href="/zf/public/themes/x-theme-<?= $this->layout ?>/resources/css/xtheme-<?= $this->layout ?>.css">
+<link rel="stylesheet" type="text/css" href="/zf/public/css/LockingGridView.css" />
+<link rel="stylesheet" type="text/css" href="/zf/public/css/icons.css" />
+<link rel="stylesheet" type="text/css" href="/zf/public/css/fileuploadfield.css" />
+<link rel="stylesheet" type="text/css" href="/zf/public/css/GroupSummary.css" />
+<link rel="stylesheet" type="text/css" href="/zf/public/css/GridTotals.css" />
+</head>
+<body>
+<!-- Start -->
+<div id="ApplicationForm"></div>
+<div id="StatusBar" style="height:20px;border:1px red solid;"></div>
+<!-- End -->
+</body>
+</html>
+<?php } ?>
+<?php } ?>

@@ -1,0 +1,30 @@
+Title_Module;Ammattinimikkeet
+Title_Title;Ammattinimike
+Title_Refresh;Päivitä
+Title_New_Title;Uusi ammattinimike
+Title_Delete_Title;Poista ammattinimike
+Title_Sending;Tallentaa
+Title_Submit;Tallenna
+Title_Close;Peruuta
+Title_Refresh_Tooltip;Päivitä ammattinimikeet tästä napista
+Title_New_Title_Tooltip;Lisää ammattinimike tästä napista
+Title_Delete_Title_Tooltip;Poista ammattinimike tästä napista
+Title_New_Title_Created;Uusi ammattinimike luotu
+Title_Title_Deleted;Ammattinimike poistettu
+Title_Are_You_Sure_Title;Oletko varma?
+Title_Are_You_Sure_Text;Tätä toimintoa ei voi peruuttaa
+Title_Success;Onnistui
+Title_No_Titles;Ei ammattinimikkeitä
+Title_Search;Etsi
+Title_Page;Sivu
+Title_Education_Title;Lisää pätevyys
+Title_Education_Title_Tooltip;Lisää pätevyys tästä napista
+Title_Delete_Education_Title;Poista pätevyys
+Title_Delete_Education_Title_Tooltip;Poista pätevyys tästä napista
+Title_Education_Name;Pätevyys
+Title_Add_Education;Lisää pätevyys
+Title_Education_Added;Pätevyys lisätty
+Title_Education_Deleted;Pätevyys poistettu
+Title_Experience_In_Years;Kokemus vuosina
+Title_Year;-vuosi
+Title_Years;-vuotta

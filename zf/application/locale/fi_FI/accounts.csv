@@ -1,0 +1,29 @@
+Accounts_Accounts;Tilit
+Accounts_Nimi;Selite
+Accounts_Deselect;Poista valinnat
+Accounts_Deselect_Tooltip;Poista valinnat tästä napista
+Accounts_Refresh;Lataa
+Accounts_Refresh_Tooltip;Lataa tästä napista
+Accounts_Add_New;Lisää tili
+Accounts_Add_New_Tooltip;Lisää tili tästä napista
+Accounts_Delete;Poista tili
+Accounts_Delete_Tooltip;Poista tili tästä napista
+Accounts_Submit;Tallenna
+Accounts_Close;Sulje
+Accounts_Error;Virhe
+Accounts_Success;Onnistui
+Accounts_Are_You_Sure_Title;Oletko varma?
+Accounts_Are_You_Sure_Text;Oletko varma, että haluat poistaa valitun tilin?
+Accounts_Sending;Tallentaa…
+Accounts_Loading;Lataa...
+Accounts_New;Lisää uusi tili
+Accounts_Tili_Id;Tilin numero
+Accounts_Tili_Nimi;Tilin selite
+Accounts_Export;Tuo
+Accounts_Export_Tooltip;Tuo tilit xls tiedostona tästä napistä
+Accounts_Import;Vie
+Accounts_Import_Tooltip;Vie tilit xls tiedostona tästä napista
+Accounts_Select_Xls;XLS-tiedosto
+Accounts_Select_Xls_Label;XLS
+Accounts_Only_Xls_Allowed;Voit valita vain XLS-tiedoston
+Accounts_Browse;Selaa...

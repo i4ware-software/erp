@@ -1,0 +1,14 @@
+SetEnv APPLICATION_ENV production
+php_value session.gc_maxlifetime 10800
+php_value max_input_time         10800
+php_value max_execution_time     10800
+php_value upload_max_filesize    110M
+php_value post_max_size          120M
+php_flag display_errors Off
+#SSLRequireSSL
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]
