@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<company>
+	<production>
+		<name>MML-Resources Oy</name>
+		<address>Ahlmanintie 56</address>
+		<zip>33800</zip>
+		<city>Tampere</city>
+		<country>FI</country>
+		<IBAN></IBAN>
+		<BIC></BIC>
+		<code></code>
+	</production>
+	<staging extends="production">
+		<name>MML-Resources Oy</name>
+		<address>Ahlmanintie 56</address>
+		<zip>33800</zip>
+		<city>Tampere</city>
+		<country>FI</country>
+		<IBAN></IBAN>
+		<BIC></BIC>
+		<code></code>
+	</staging>
+</company>
