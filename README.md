@@ -22,7 +22,7 @@ zf/application/uploads/courseagreements\
 zf/application/uploads/cvs\
 zf/application/uploads/ostolaskut\
 zf/application/uploads/taxcards\
-zf/application/uploads/timesheets\
+zf/application/uploads/timesheets
 
 Run erp.sql to MySQL database and then login with username admin@yourdomain.tld and password admin
 
@@ -44,6 +44,6 @@ zf/application/uploads/courseagreements\
 zf/application/uploads/cvs\
 zf/application/uploads/ostolaskut\
 zf/application/uploads/taxcards\
-zf/application/uploads/timesheets\
+zf/application/uploads/timesheets
 
 Run erp.sql to MySQL database and then login with username admin@yourdomain.tld and password admin
