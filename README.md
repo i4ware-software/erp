@@ -12,17 +12,17 @@ Modify config.xml like set database password
 
 Create folders:
 
-zf/application/reports
-zf/application/reports/maksatus
-zf/application/reports/payments
-zf/application/uploads
-zf/application/uploads/agreements
-zf/application/uploads/certificates
-zf/application/uploads/courseagreements
-zf/application/uploads/cvs
-zf/application/uploads/ostolaskut
-zf/application/uploads/taxcards
-zf/application/uploads/timesheets
+zf/application/reports\
+zf/application/reports/maksatus\
+zf/application/reports/payments\
+zf/application/uploads\
+zf/application/uploads/agreements\
+zf/application/uploads/certificates\
+zf/application/uploads/courseagreements\
+zf/application/uploads/cvs\
+zf/application/uploads/ostolaskut\
+zf/application/uploads/taxcards\
+zf/application/uploads/timesheets\
 
 Run erp.sql to MySQL database and then login with username admin@yourdomain.tld and password admin
 
@@ -34,16 +34,16 @@ Chmod 777 folder application/log
 
 Create/chmod 777 folowing folders
 
-zf/application/reports
-zf/application/reports/maksatus
-zf/application/reports/payments
-zf/application/uploads
-zf/application/uploads/agreements
-zf/application/uploads/certificates
-zf/application/uploads/courseagreements
-zf/application/uploads/cvs
-zf/application/uploads/ostolaskut
-zf/application/uploads/taxcards
-zf/application/uploads/timesheets
+zf/application/reports\
+zf/application/reports/maksatus\
+zf/application/reports/payments\
+zf/application/uploads\
+zf/application/uploads/agreements\
+zf/application/uploads/certificates\
+zf/application/uploads/courseagreements\
+zf/application/uploads/cvs\
+zf/application/uploads/ostolaskut\
+zf/application/uploads/taxcards\
+zf/application/uploads/timesheets\
 
 Run erp.sql to MySQL database and then login with username admin@yourdomain.tld and password admin
