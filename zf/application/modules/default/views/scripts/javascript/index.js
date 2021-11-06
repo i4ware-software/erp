@@ -309,7 +309,7 @@ Ext.onReady(function () {
     	height: 100,
     	buttonAlign: 'right',
     	cls:'mml-logo',
-    	html:'<img src="/zf/public/images/jarkeva-logo-musta.png" alt="jarkeva-logo" />',
+    	html:'<div style="padding-left:20px; padding-top:2px;"><img src="/zf/public/images/logo_smallBW_for_web_small.png" alt="memoen-logo" /></div>',
     	items: [{
             text: '<?= $this->logout ?>',
             tooltip: '<?= $this->logouttooltip ?>',
