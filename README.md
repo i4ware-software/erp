@@ -47,3 +47,7 @@ zf/application/uploads/taxcards\
 zf/application/uploads/timesheets
 
 Run erp.sql to MySQL database and then login with username admin@yourdomain.tld and password admin
+
+Demo in Finnish: https://www.memonen.fi/zf/public/
+
+Copyright Owner Web-site: https://www.memonen.fi/
