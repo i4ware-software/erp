@@ -315,7 +315,7 @@ Ext.onReady(function () {
             tooltip: '<?= $this->logouttooltip ?>',
             iconCls: 'icon-door-out',
             handler: function () {
-                document.location = '/zf/public/index/logout';
+                document.location = '/zf/public/default/index/logout';
             },
             scope: this
         },
@@ -416,7 +416,7 @@ Ext.onReady(function () {
 		if (json.success == true) {
 
 		} else {
-			document.location = '/zf/public/index/logout';
+			document.location = '/zf/public/default/index/logout';
 		} 
 		 
 		}, 

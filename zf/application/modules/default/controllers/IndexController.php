@@ -152,7 +152,7 @@ class IndexController extends Zend_Controller_Action
 		
 	Zend_Session::destroy();
 	$this->_forward('index');
-	$this->_redirect('/index/index');
+	$this->_redirect('/');
 	exit();
     }
     /**

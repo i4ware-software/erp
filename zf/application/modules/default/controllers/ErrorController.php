@@ -35,8 +35,8 @@ class ErrorController extends Zend_Controller_Action
 		$errors = $this->_getParam('error_handler');		
 		$logger->err("IP: ".$_SERVER['REMOTE_ADDR']." USER AGENT: "
 		. $_SERVER['HTTP_USER_AGENT'] . ", ERROR: "
-		.ereg_replace("[\r\t\n\v]","",$errors->exception));	
-		$json = ereg_replace("[\r\t\n\v]","",$errors->exception);
+		.preg_replace("[\r\t\n\v]","",$errors->exception));	
+		$json = preg_replace("[\r\t\n\v]","",$errors->exception);
 		$success = array('success' => false
 		, 'msg' => $json);
 		
